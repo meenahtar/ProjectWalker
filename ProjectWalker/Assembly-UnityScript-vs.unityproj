@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Openable Door.js" />
+     <Compile Include="Assets\OpenableDoor.js" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>D:/Users/tjb2597/Documents/ProjectWalker/ProjectWalker/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
