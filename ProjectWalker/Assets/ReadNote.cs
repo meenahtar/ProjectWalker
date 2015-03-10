@@ -14,15 +14,15 @@ public class ReadNote : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyUp ("o")) {
-			/*if(note.activeSelf)
+			if(note.activeSelf)
 			{
 				note.SetActive(false);
 			}
 			else
 			{
 				note.SetActive(true);
-			}*/
-			note.GetComponent<Image> ().SetActive(true);
+			}
+			//note.GetComponent<Image> ().SetActive(true);
 		}
 		
 	}
