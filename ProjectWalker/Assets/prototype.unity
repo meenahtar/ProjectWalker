@@ -258,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1.10630441, y: .97899431, z: 1.23396051}
   m_Children: []
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!65 &446456498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -639,10 +639,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 756709843}
   - 95: {fileID: 756709844}
-  - 114: {fileID: 756709845}
-  - 65: {fileID: 756709846}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,15 +653,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 756709842}
   m_LocalRotation: {x: 0, y: -.704006195, z: 0, w: .710193932}
-  m_LocalPosition: {x: .067400001, y: .0271610003, z: .0961999968}
-  m_LocalScale: {x: .663954318, y: .663953424, z: .663954258}
+  m_LocalPosition: {x: -1.97624922, y: -2.69247341, z: -.022315979}
+  m_LocalScale: {x: 66.8232574, y: 66.8231659, z: 66.8232422}
   m_Children:
   - {fileID: 559460710}
   - {fileID: 1149427599}
   - {fileID: 1230036972}
   - {fileID: 590324723}
-  m_Father: {fileID: 1134842305}
-  m_RootOrder: 2
+  m_Father: {fileID: 877790807}
+  m_RootOrder: 0
 --- !u!95 &756709844
 Animator:
   serializedVersion: 3
@@ -680,12 +678,42 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &756709845
+--- !u!1 &877790806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 877790807}
+  - 65: {fileID: 877790809}
+  - 114: {fileID: 877790808}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &877790807
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 877790806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.78000021, y: 5.05000019, z: 12.4200001}
+  m_LocalScale: {x: 1.00600266, y: 1.04115427, z: 1}
+  m_Children:
+  - {fileID: 756709843}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!114 &877790808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 756709842}
+  m_GameObject: {fileID: 877790806}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b7974ee20096e4fafa54e611c6b267, type: 3}
@@ -693,18 +721,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
---- !u!65 &756709846
+--- !u!65 &877790809
 BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 756709842}
+  m_GameObject: {fileID: 877790806}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .0299999993, y: .0799999982, z: .0299999993}
-  m_Center: {x: 0, y: .0399999991, z: 0}
+  m_Size: {x: 10.8511009, y: 11.6370411, z: 6.37105656}
+  m_Center: {x: -1.65989542, y: .671274662, z: -.276985168}
 --- !u!1 &897210735
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +898,7 @@ Transform:
   m_LocalScale: {x: .0099359788, y: .00830281246, z: .00993597694}
   m_Children: []
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!23 &991149329
 Renderer:
   m_ObjectHideFlags: 0
@@ -1200,7 +1228,6 @@ Transform:
   m_Children:
   - {fileID: 1195447539}
   - {fileID: 1502170123}
-  - {fileID: 756709843}
   - {fileID: 446456497}
   - {fileID: 1906306488}
   - {fileID: 1380391330}
@@ -1448,7 +1475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 04a4b733100608b4e954cad34ea2f7ee, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 04a4b733100608b4e954cad34ea2f7ee, type: 3}
       propertyPath: m_LocalScale.x
@@ -1549,7 +1576,7 @@ Transform:
   m_LocalScale: {x: .45132646, y: .0334146656, z: .225303248}
   m_Children: []
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1502170119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1881,7 @@ Transform:
   m_Children:
   - {fileID: 1074646201}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!65 &1906306489
 BoxCollider:
   m_ObjectHideFlags: 0
