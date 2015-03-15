@@ -1,16 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OpenableDoor.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OpenableDesk.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Moveable.cs" Line="24" Column="40" />
-      <File FileName="Assets\OpenableDoor.js" Line="1" Column="1" />
-      <File FileName="Assets\ReadNote.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\OpenableDoor.js" Line="19" Column="37" />
-      <File FileName="Assets\ReadNote.cs" Line="1" Column="1" />
-      <File FileName="Assets\Moveable.cs" Line="1" Column="1" />
->>>>>>> b53e032a1b54da98aa9db02adc4319dfd427b1b5
+      <File FileName="Assets\OpenableDesk.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
