@@ -8,6 +8,7 @@ public class OpenableDesk : MonoBehaviour {
 	bool enterRange;
 
 	float finalX;
+	float smooth;
 
 	float startTime;
 
@@ -17,6 +18,7 @@ public class OpenableDesk : MonoBehaviour {
 		pressedOpen = false;
 		opened = false;
 		enterRange = false;
+		smooth = 0.01f;
 	}
 	
 	// Update is called once per frame
@@ -26,10 +28,18 @@ public class OpenableDesk : MonoBehaviour {
 			startTime = Time.time;
 		}
 		if (pressedOpen && opened == false) {
-			while (transform.position.x < finalX) {
-				transform.Translate(new Vector3(finalX - transform.position.x, 0.0f, 0.0f), Space.Self);
-				opened = true;
+			if(startTime <= 2)
+			{
+				//smooth = smooth + .000001f;
+				//print(smooth);
 			}
+			transform.Translate(new Vector3(smooth, 0.0f, 0.0f), Space.Self);
+			//opened = true;
+			/*while (transform.position.x < finalX) {
+				transform.Translate(new Vector3(1.0f, 0.0f, 0.0f), Space.Self);
+				opened = true;
+				// - transform.position.x
+			}*/
 		}
 	}
 	
