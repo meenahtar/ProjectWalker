@@ -24,7 +24,7 @@ public class OpenableDesk : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("f")) {
+		if (Input.GetKeyDown ("f") && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true) {
 			pressedOpen = true;
 			startTime = Time.time;
 
@@ -50,7 +50,7 @@ public class OpenableDesk : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		if(enterRange && opened == false){
+		if(enterRange && opened == false && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open drawer");
 		}
 		//Get key
