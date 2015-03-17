@@ -22,13 +22,13 @@ function Update (){
 		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
 	}
 
-	if(Input.GetKeyDown("f") && enter){
+	if(Input.GetKeyDown("f") && enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == true){
 		open = !open;
 	}
 }
 
 function OnGUI(){
-	if(enter){
+	if(enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == true){
 		GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open the door");
 	}
 }

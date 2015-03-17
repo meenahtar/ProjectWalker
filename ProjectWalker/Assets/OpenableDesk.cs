@@ -6,6 +6,7 @@ public class OpenableDesk : MonoBehaviour {
 	bool pressedOpen;
 	bool opened;
 	bool enterRange;
+	public bool keyObtained;
 
 	float finalX;
 	float smooth;
@@ -18,7 +19,7 @@ public class OpenableDesk : MonoBehaviour {
 		pressedOpen = false;
 		opened = false;
 		enterRange = false;
-		smooth = 0.01f;
+		keyObtained = false;
 	}
 	
 	// Update is called once per frame
@@ -26,27 +27,37 @@ public class OpenableDesk : MonoBehaviour {
 		if (Input.GetKeyDown ("f")) {
 			pressedOpen = true;
 			startTime = Time.time;
+
 		}
-		if (pressedOpen && opened == false) {
-			if(startTime <= 2)
-			{
-				//smooth = smooth + .000001f;
-				//print(smooth);
-			}
-			transform.Translate(new Vector3(smooth, 0.0f, 0.0f), Space.Self);
-			//opened = true;
+
+		if (Input.GetKeyDown ("g")) {
+			keyObtained = true;
+			GameObject key = GameObject.Find("Key");
+			key.SetActive(false);
+		}
+
+		if (pressedOpen && opened == false && enterRange) {
+			transform.Translate(new Vector3(1.5f, 0.0f, 0.0f), Space.Self);
+			opened = true;
 			/*while (transform.position.x < finalX) {
 				transform.Translate(new Vector3(1.0f, 0.0f, 0.0f), Space.Self);
 				opened = true;
 				// - transform.position.x
 			}*/
 		}
+
+
 	}
 	
 	void OnGUI(){
 		if(enterRange && opened == false){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open drawer");
 		}
+		//Get key
+		if(enterRange && opened && keyObtained == false && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true){
+			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to take key");
+		}
+
 	}
 	
 	//Activate the Main function when player is near the door
