@@ -50,6 +50,7 @@
      <Compile Include="Assets\Note1.cs" />
      <Compile Include="Assets\OpenableDesk.cs" />
      <Compile Include="Assets\ReadNote.cs" />
+     <Compile Include="Assets\ReadNote2.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>D:/Users/tjb2597/Documents/ProjectWalker/ProjectWalker/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

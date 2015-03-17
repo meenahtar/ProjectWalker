@@ -16,10 +16,10 @@ public class Moveable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("f")) {
+		if (Input.GetKeyDown ("f") && enterRange) {
 			difference = playerReference.transform.position - transform.position;
 		}
-		if (Input.GetKey ("f")) {
+		if (Input.GetKey ("f") && enterRange) {
 			newPosition = new Vector3(playerReference.transform.position.x - difference.x, playerReference.transform.position.y - difference.y, playerReference.transform.position.z - difference.z);
 			rigidbody.MovePosition(newPosition);
 		}
@@ -27,7 +27,7 @@ public class Moveable : MonoBehaviour {
 
 	void OnGUI(){
 		if(enterRange){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Hold 'F' to move object");
+			GUI.Label(new Rect(Screen.width/2 - 150, Screen.height - 100, 300, 30), "Hold 'F' and move character to move object");
 		}
 	}
 
