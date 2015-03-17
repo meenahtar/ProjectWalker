@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Moveable.cs" />
+     <Compile Include="Assets\Note1.cs" />
      <Compile Include="Assets\OpenableDesk.cs" />
      <Compile Include="Assets\ReadNote.cs" />
  <Reference Include="UnityEngine.UI">
