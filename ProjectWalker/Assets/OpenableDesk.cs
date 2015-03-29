@@ -13,6 +13,14 @@ public class OpenableDesk : MonoBehaviour {
 
 	float startTime;
 
+	
+	public AudioClip lockedSound;
+	public AudioClip openSound;
+	
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
+
 	// Use this for initialization
 	void Start () {
 		finalX = 4f;
@@ -20,6 +28,7 @@ public class OpenableDesk : MonoBehaviour {
 		opened = false;
 		enterRange = false;
 		keyObtained = false;
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame

@@ -7,6 +7,7 @@ private var enter : boolean;
 private var defaultRot : Vector3;
 private var openRot : Vector3;
 
+
 function Start(){
 	defaultRot = transform.eulerAngles;
 	openRot = new Vector3 (defaultRot.x, defaultRot.y + DoorOpenAngle, defaultRot.z);
