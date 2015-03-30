@@ -34,10 +34,15 @@ public class OpenableDesk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("f") && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true) {
+
 			pressedOpen = true;
 			startTime = Time.time;
 
+		} 
+		if(Input.GetKeyDown ("f") && enterRange && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == false){
+			source.PlayOneShot(lockedSound, 4f);
 		}
+
 
 		if (Input.GetKeyDown ("g")) {
 			keyObtained = true;
@@ -45,15 +50,16 @@ public class OpenableDesk : MonoBehaviour {
 			key.SetActive(false);
 		}
 
-		if (pressedOpen && opened == false && enterRange) {
+		if (pressedOpen && opened == false && enterRange && Input.GetKeyDown ("f")) {
 			transform.Translate(new Vector3(1.5f, 0.0f, 0.0f), Space.Self);
 			opened = true;
+			source.PlayOneShot(openSound, 4f);
 			/*while (transform.position.x < finalX) {
 				transform.Translate(new Vector3(1.0f, 0.0f, 0.0f), Space.Self);
 				opened = true;
 				// - transform.position.x
 			}*/
-		}
+		} 
 
 
 	}

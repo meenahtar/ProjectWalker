@@ -7,16 +7,22 @@ private var enter : boolean;
 private var defaultRot : Vector3;
 private var openRot : Vector3;
 
+public var lockedSound : AudioClip;
+public var openSound : AudioClip;
+
+private var source : AudioSource;
 
 function Start(){
 	defaultRot = transform.eulerAngles;
 	openRot = new Vector3 (defaultRot.x, defaultRot.y + DoorOpenAngle, defaultRot.z);
+	source = GetComponent.<AudioSource>();
 }
 
 //Main function
 function Update (){
 	if(open){
 		//Open door
+		
 		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
 	}else{
 		//Close door
@@ -24,7 +30,10 @@ function Update (){
 	}
 
 	if(Input.GetKeyDown("f") && enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == true){
+		source.PlayOneShot(openSound, 4f);
 		open = !open;
+	} else if(Input.GetKeyDown("f") && enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == false){
+		source.PlayOneShot(lockedSound, 4f);
 	}
 }
 
