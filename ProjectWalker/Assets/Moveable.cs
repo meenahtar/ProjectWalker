@@ -11,7 +11,7 @@ public class Moveable : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerReference = GameObject.FindWithTag ("Player");
-		rigidbody.WakeUp ();
+		GetComponent<Rigidbody>().WakeUp ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class Moveable : MonoBehaviour {
 		}
 		if (Input.GetKey ("f") && enterRange) {
 			newPosition = new Vector3(playerReference.transform.position.x - difference.x, playerReference.transform.position.y - difference.y, playerReference.transform.position.z - difference.z);
-			rigidbody.MovePosition(newPosition);
+			GetComponent<Rigidbody>().MovePosition(newPosition);
 		}
 	}
 
