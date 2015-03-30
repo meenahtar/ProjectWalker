@@ -1,20 +1,14 @@
 fileFormatVersion: 2
-guid: a6ae30a3a3156f04b8d3a9feb4023174
+guid: 52e358f8b1b93194c82c14708f233a9f
+timeCreated: 1427673949
+licenseType: Free
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: imagePlane1
-    100004: imagePlane2
-    100006: left1
-    100008: pCube1
     400000: //RootNode
-    400002: imagePlane1
-    400004: imagePlane2
-    400006: left1
-    400008: pCube1
-    2300000: pCube1
-    3300000: pCube1
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: pCube1
     9500000: //RootNode
   materials:
@@ -44,11 +38,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -71,3 +67,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
