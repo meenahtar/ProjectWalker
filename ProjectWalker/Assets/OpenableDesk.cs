@@ -16,6 +16,7 @@ public class OpenableDesk : MonoBehaviour {
 	
 	public AudioClip lockedSound;
 	public AudioClip openSound;
+	public AudioClip pickUpSound;
 	
 	private AudioSource source;
 	private float volLowRange = .5f;
@@ -47,6 +48,7 @@ public class OpenableDesk : MonoBehaviour {
 		if (Input.GetKeyDown ("g")) {
 			keyObtained = true;
 			GameObject key = GameObject.Find("Key");
+			source.PlayOneShot(pickUpSound, 4f);
 			key.SetActive(false);
 		}
 
