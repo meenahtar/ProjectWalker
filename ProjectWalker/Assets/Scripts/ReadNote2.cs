@@ -16,7 +16,11 @@ public class ReadNote2 : MonoBehaviour {
 	
 	Sprite noteSprite;
 	string noteName;
+
+	public AudioClip flush;
 	
+	private AudioSource source;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -88,6 +92,7 @@ public class ReadNote2 : MonoBehaviour {
 		{
 			if (open) {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to close note");
+				source.PlayOneShot(flush, 4f);
 			}
 			else {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to read note");
