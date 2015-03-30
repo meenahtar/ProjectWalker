@@ -799,6 +799,8 @@ GameObject:
   - 54: {fileID: 392280951}
   - 65: {fileID: 392280950}
   - 65: {fileID: 392280949}
+  - 23: {fileID: 392280955}
+  - 33: {fileID: 392280954}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -881,6 +883,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: .5, z: 2}
   m_Center: {x: 0, y: -.200000003, z: .100000001}
+--- !u!33 &392280954
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392280947}
+  m_Mesh: {fileID: 4300000, guid: 52e358f8b1b93194c82c14708f233a9f, type: 3}
+--- !u!23 &392280955
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392280947}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ac19b1ce9fe84194299204af3e0ca623, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1001 &404296347
 Prefab:
   m_ObjectHideFlags: 0
@@ -2397,7 +2426,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991149327}
-  m_Mesh: {fileID: 4300000, guid: d0a412d0f5d4ef844b42b6b116334769, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 66bab28f553e5f842bfe4c9412e24885, type: 3}
 --- !u!65 &991149331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2423,6 +2452,8 @@ GameObject:
   - 54: {fileID: 1005806392}
   - 65: {fileID: 1005806391}
   - 65: {fileID: 1005806390}
+  - 23: {fileID: 1005806396}
+  - 33: {fileID: 1005806395}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -2505,6 +2536,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: .5, z: 2}
   m_Center: {x: 0, y: -.200000003, z: .100000001}
+--- !u!33 &1005806395
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005806388}
+  m_Mesh: {fileID: 4300000, guid: 52e358f8b1b93194c82c14708f233a9f, type: 3}
+--- !u!23 &1005806396
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005806388}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ac19b1ce9fe84194299204af3e0ca623, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &1010347213
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,6 +4180,8 @@ GameObject:
   - 54: {fileID: 1539238858}
   - 65: {fileID: 1539238857}
   - 65: {fileID: 1539238856}
+  - 23: {fileID: 1539238862}
+  - 33: {fileID: 1539238861}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -4204,6 +4264,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: .5, z: 2}
   m_Center: {x: 0, y: -.200000003, z: .100000001}
+--- !u!33 &1539238861
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539238854}
+  m_Mesh: {fileID: 4300000, guid: 52e358f8b1b93194c82c14708f233a9f, type: 3}
+--- !u!23 &1539238862
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539238854}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ac19b1ce9fe84194299204af3e0ca623, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1001 &1552679962
 Prefab:
   m_ObjectHideFlags: 0
@@ -4968,6 +5055,8 @@ GameObject:
   - 54: {fileID: 1906306491}
   - 65: {fileID: 1906306493}
   - 65: {fileID: 1906306492}
+  - 23: {fileID: 1906306495}
+  - 33: {fileID: 1906306494}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -5050,6 +5139,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: .899999976, z: 1}
   m_Center: {x: 0, y: -.150000006, z: .0500000007}
+--- !u!33 &1906306494
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906306487}
+  m_Mesh: {fileID: 4300000, guid: 52e358f8b1b93194c82c14708f233a9f, type: 3}
+--- !u!23 &1906306495
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906306487}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ac19b1ce9fe84194299204af3e0ca623, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &1915035998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5659,8 @@ GameObject:
   - 54: {fileID: 2123487008}
   - 65: {fileID: 2123487007}
   - 65: {fileID: 2123487006}
+  - 23: {fileID: 2123487013}
+  - 33: {fileID: 2123487012}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -5625,6 +5743,33 @@ Transform:
   - {fileID: 1299020958}
   m_Father: {fileID: 1427652954}
   m_RootOrder: 7
+--- !u!33 &2123487012
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123487005}
+  m_Mesh: {fileID: 4300000, guid: 52e358f8b1b93194c82c14708f233a9f, type: 3}
+--- !u!23 &2123487013
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123487005}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: ac19b1ce9fe84194299204af3e0ca623, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &2145073078
 GameObject:
   m_ObjectHideFlags: 0
