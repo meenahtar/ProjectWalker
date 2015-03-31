@@ -57,11 +57,11 @@ public class OpenableVent : MonoBehaviour {
 	void OnGUI()
 	{
 		if(enterRange && opened == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to use screwdriver on vent");
+			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'F' to use screwdriver on vent");
 		}
 		//Get key
 		if(enterRange && opened && keyObtained == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to take key");
+			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'G' to take key");
 		}
 	}
 

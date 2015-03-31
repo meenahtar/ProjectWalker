@@ -13,8 +13,6 @@ public class OpenableDesk : MonoBehaviour {
 	public AudioClip pickUpSound;
 	
 	private AudioSource source;
-	private float volLowRange = .5f;
-	private float volHighRange = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,18 +29,12 @@ public class OpenableDesk : MonoBehaviour {
 			transform.Translate(new Vector3(1.5f, 0.0f, 0.0f), Space.Self);
 			opened = true;
 			source.PlayOneShot(openSound, 4f);
-			/*while (transform.position.x < finalX) {
-				transform.Translate(new Vector3(1.0f, 0.0f, 0.0f), Space.Self);
-				opened = true;
-				// - transform.position.x
-			}*/
 		} 
 		else if (Input.GetKeyDown ("f") && opened && enterRange) {
 			transform.Translate(new Vector3(-1.5f, 0.0f, 0.0f), Space.Self);
 			opened = false;
 			source.PlayOneShot(openSound, 4f);
 		}
-		
 	}
 	
 	void OnGUI(){
