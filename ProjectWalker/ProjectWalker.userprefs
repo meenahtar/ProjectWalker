@@ -1,12 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OpenableDesk.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ReadNote2.cs">
     <Files>
-      <File FileName="Assets\OpenableDesk.cs" Line="51" Column="34" />
-      <File FileName="Assets\ReadNote.cs" Line="1" Column="1" />
-      <File FileName="Assets\Note1.cs" Line="1" Column="1" />
-      <File FileName="Assets\ReadNote2.cs" Line="1" Column="1" />
-      <File FileName="Assets\Moveable.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ReadNote2.cs" Line="30" Column="49" />
+      <File FileName="Assets\Scripts\Screwdriver.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\OpenableDesk.cs" Line="52" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

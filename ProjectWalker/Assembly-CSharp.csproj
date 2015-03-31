@@ -46,11 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CharacterSpeech.cs" />
      <Compile Include="Assets\Scripts\Moveable.cs" />
      <Compile Include="Assets\Scripts\Note1.cs" />
      <Compile Include="Assets\Scripts\OpenableDesk.cs" />
+     <Compile Include="Assets\Scripts\OpenableVent.cs" />
      <Compile Include="Assets\Scripts\ReadNote.cs" />
      <Compile Include="Assets\Scripts\ReadNote2.cs" />
+     <Compile Include="Assets\Scripts\Screwdriver.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
