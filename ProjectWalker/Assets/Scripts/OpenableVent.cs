@@ -6,10 +6,10 @@ public class OpenableVent : MonoBehaviour {
 	bool enterRange;
 	bool pressedOpen;
 	bool opened;
-	public bool keyObtained;
 
 	GameObject vent;
 	GameObject screwDriver;
+	GameObject ventKey;
 
 	public AudioClip lockedSound;
 	public AudioClip openSound;
@@ -21,11 +21,12 @@ public class OpenableVent : MonoBehaviour {
 	void Start () {
 		vent = GameObject.Find ("Vent");
 		screwDriver = GameObject.Find ("Screw Driver");
+		ventKey = GameObject.Find ("Vent Key");
+		ventKey.SetActive (false);
 
 		pressedOpen = false;
 		opened = false;
 		enterRange = false;
-		keyObtained = false;
 		source = GetComponent<AudioSource>();
 	}
 	
@@ -35,20 +36,21 @@ public class OpenableVent : MonoBehaviour {
 			pressedOpen = true;
 		} 
 
-		if(Input.GetKeyDown ("f") && enterRange && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == false){
-			source.PlayOneShot(lockedSound, 4f);
-		}
+		//if(Input.GetKeyDown ("f") && enterRange && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == false){
+		//	source.PlayOneShot(lockedSound, 4f);
+		//}
 		
 		
-		if (Input.GetKeyDown ("g") && enterRange) {
+		/*if (Input.GetKeyDown ("g") && enterRange) {
 			keyObtained = true;
 			GameObject key = GameObject.Find("Vent Key");
 			source.PlayOneShot(pickUpSound, 4f);
 			key.SetActive(false);
-		}
+		}*/
 		
 		if (pressedOpen && opened == false && enterRange && Input.GetKeyDown ("f")) {
 			opened = true;
+			ventKey.SetActive(true);
 			vent.SetActive(false);
 			source.PlayOneShot(openSound, 4f);
 		} 
@@ -60,9 +62,9 @@ public class OpenableVent : MonoBehaviour {
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'F' to use screwdriver on vent");
 		}
 		//Get key
-		if(enterRange && opened && keyObtained == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
+		/*if(enterRange && opened && keyObtained == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'G' to take key");
-		}
+		}*/
 	}
 
 	//Activate the Main function when player is near the door

@@ -21,7 +21,7 @@ public class Screwdriver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("f") && enter)
+		if(Input.GetKeyDown("g") && enter)
 		{
 			screwDriverObtained = true;
 			screwDriver.SetActive(false);
@@ -32,7 +32,7 @@ public class Screwdriver : MonoBehaviour {
 	{
 		if(enter)
 		{
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to grab screwdriver");
+			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 100, 350, 30), "Press 'G' to grab screwdriver");
 		}
 	}
 	

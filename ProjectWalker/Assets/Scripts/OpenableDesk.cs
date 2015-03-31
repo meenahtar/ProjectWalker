@@ -5,12 +5,10 @@ public class OpenableDesk : MonoBehaviour {
 	
 	bool opened;
 	bool enterRange;
-	public bool keyObtained;
 
 	
 	public AudioClip lockedSound;
 	public AudioClip openSound;
-	public AudioClip pickUpSound;
 	
 	private AudioSource source;
 
@@ -18,7 +16,6 @@ public class OpenableDesk : MonoBehaviour {
 	void Start () {
 		opened = false;
 		enterRange = false;
-		keyObtained = false;
 		source = GetComponent<AudioSource>();
 	}
 	

@@ -1,8 +1,8 @@
 ﻿// Smothly open a door
 var smooth = 2.0;
 var DoorOpenAngle = 90.0;
-private var open : boolean;
-private var enter : boolean;
+public var open : boolean;
+public var enter : boolean;
 
 private var defaultRot : Vector3;
 private var openRot : Vector3;
@@ -29,16 +29,17 @@ function Update (){
 		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
 	}
 
-	if(Input.GetKeyDown("f") && enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == true){
+	if(Input.GetKeyDown("f") && enter && GameObject.Find("First Person Controller").GetComponent("CharacterSpeech").keyObtained == true){
 		source.PlayOneShot(openSound, 4f);
 		open = !open;
-	} else if(Input.GetKeyDown("f") && enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == false){
+		GameObject.Find("First Person Controller").GetComponent("CharacterSpeech").keyObtained = false;
+	} else if(Input.GetKeyDown("f") && enter && GameObject.Find("First Person Controller").GetComponent("CharacterSpeech").keyObtained == false){
 		source.PlayOneShot(lockedSound, 4f);
 	}
 }
 
 function OnGUI(){
-	if(enter && GameObject.Find("deskDrawer").GetComponent("OpenableDesk").keyObtained == true){
+	if(enter && GameObject.Find("First Person Controller").GetComponent("CharacterSpeech").keyObtained == true){
 		GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open the door");
 	}
 }

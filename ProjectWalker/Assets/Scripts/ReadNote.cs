@@ -44,7 +44,7 @@ public class ReadNote : MonoBehaviour {
 	{
 			//note.GetComponent<Image> ().SetActive(true);
 
-		if(Input.GetKeyDown("f") && enter)
+		if(Input.GetKeyDown("g") && enter)
 		{
 			if (open) 
 			{
@@ -84,10 +84,10 @@ public class ReadNote : MonoBehaviour {
 		if(enter)
 		{
 			if (open) {
-				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to close note");
+				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to close note");
 			}
 			else {
-				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to read note");
+				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to read note");
 			}
 
 		}
