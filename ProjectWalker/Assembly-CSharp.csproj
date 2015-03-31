@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterSpeech.cs" />
+     <Compile Include="Assets\Scripts\GetKey.cs" />
      <Compile Include="Assets\Scripts\Moveable.cs" />
      <Compile Include="Assets\Scripts\Note1.cs" />
      <Compile Include="Assets\Scripts\OpenableDesk.cs" />

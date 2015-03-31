@@ -24,7 +24,8 @@ public class GetKey : MonoBehaviour
 			FPC.GetComponent<CharacterSpeech>().keyObtained = true;
 			source.PlayOneShot(pickUpSound, 4f);
 			//setActive(false);
-			this.gameObject.SetActive(false);
+			//this.gameObject.SetActive(false);
+			this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 		} 
 	}
 

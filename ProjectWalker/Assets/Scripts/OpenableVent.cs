@@ -52,7 +52,7 @@ public class OpenableVent : MonoBehaviour {
 			opened = true;
 			ventKey.SetActive(true);
 			vent.SetActive(false);
-			source.PlayOneShot(openSound, 4f);
+  			source.PlayOneShot(openSound, 4f);
 		} 
 	}
 

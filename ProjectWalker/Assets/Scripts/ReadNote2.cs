@@ -16,10 +16,7 @@ public class ReadNote2 : MonoBehaviour {
 	
 	Sprite noteSprite;
 	string noteName;
-
-	public AudioClip flush;
 	
-	private AudioSource source;
 
 	// Use this for initialization
 	void Start () 
@@ -29,7 +26,7 @@ public class ReadNote2 : MonoBehaviour {
 		//note = GameObject.Find("Note1").GetComponent<ReadNote> ().note;
 		FPC = GameObject.Find ("First Person Controller");
 		MC = GameObject.Find ("Main Camera");
-		
+		note = this.gameObject;
 		
 		open = false;
 		enter = false;
@@ -42,7 +39,7 @@ public class ReadNote2 : MonoBehaviour {
 		//cannot use extra script
 		//may have to extend parent class and have differences in local class
 		
-		note.SetActive (false);
+		note.SetActive (true);
 	}
 	
 	// Update is called once per frame
@@ -92,7 +89,6 @@ public class ReadNote2 : MonoBehaviour {
 		{
 			if (open) {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 160, 150, 30), "Press 'G' to close note");
-				source.PlayOneShot(flush, 4f);
 			}
 			else {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 160, 150, 30), "Press 'G' to read note");
