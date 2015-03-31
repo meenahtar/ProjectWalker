@@ -2,16 +2,10 @@
 using System.Collections;
 
 public class OpenableDesk : MonoBehaviour {
-
-	bool pressedOpen;
+	
 	bool opened;
 	bool enterRange;
 	public bool keyObtained;
-
-	float finalX;
-	float smooth;
-
-	float startTime;
 
 	
 	public AudioClip lockedSound;
@@ -24,8 +18,6 @@ public class OpenableDesk : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		finalX = 4f;
-		pressedOpen = false;
 		opened = false;
 		enterRange = false;
 		keyObtained = false;
@@ -33,26 +25,9 @@ public class OpenableDesk : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown ("f") && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true) {
-
-			pressedOpen = true;
-			startTime = Time.time;
-
-		} 
-		if(Input.GetKeyDown ("f") && enterRange && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == false){
-			source.PlayOneShot(lockedSound, 4f);
-		}
-
-
-		if (Input.GetKeyDown ("g")) {
-			keyObtained = true;
-			GameObject key = GameObject.Find("Key");
-			source.PlayOneShot(pickUpSound, 4f);
-			key.SetActive(false);
-		}
-
-		if (pressedOpen && opened == false && enterRange && Input.GetKeyDown ("f")) {
+	void Update () 
+	{
+		if (opened == false && enterRange && Input.GetKeyDown ("f")) {
 			transform.Translate(new Vector3(1.5f, 0.0f, 0.0f), Space.Self);
 			opened = true;
 			source.PlayOneShot(openSound, 4f);
@@ -62,19 +37,22 @@ public class OpenableDesk : MonoBehaviour {
 				// - transform.position.x
 			}*/
 		} 
-
-
+		else if (Input.GetKeyDown ("f") && opened && enterRange) {
+			transform.Translate(new Vector3(-1.5f, 0.0f, 0.0f), Space.Self);
+			opened = false;
+			source.PlayOneShot(openSound, 4f);
+		}
+		
 	}
 	
 	void OnGUI(){
-		if(enterRange && opened == false && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true){
+		if(enterRange && opened == false){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to open drawer");
 		}
-		//Get key
-		if(enterRange && opened && keyObtained == false && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == true){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to take key");
+		if(enterRange && opened){
+			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to close drawer");
 		}
-
+		
 	}
 	
 	//Activate the Main function when player is near the door

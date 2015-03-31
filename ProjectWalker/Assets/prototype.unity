@@ -4019,7 +4019,7 @@ Transform:
   - {fileID: 739629088}
   - {fileID: 2042068285}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &777233483
 GameObject:
   m_ObjectHideFlags: 0
@@ -4436,7 +4436,7 @@ Transform:
   m_Children:
   - {fileID: 756709843}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &877790808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6637,7 +6637,6 @@ Transform:
   m_Children:
   - {fileID: 1965785082}
   - {fileID: 106054195}
-  - {fileID: 1673761875}
   - {fileID: 877790807}
   - {fileID: 1502170123}
   - {fileID: 776246543}
@@ -8684,7 +8683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1507108672
 GameObject:
   m_ObjectHideFlags: 0
@@ -8771,7 +8770,7 @@ Transform:
   m_Children:
   - {fileID: 845781720}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &1514421920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9369,7 +9368,7 @@ Transform:
   - {fileID: 587689764}
   - {fileID: 112781728}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!65 &1640980515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9531,12 +9530,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1673761874}
-  m_LocalRotation: {x: .532953858, y: -.464715213, z: .532953858, w: .464715213}
-  m_LocalPosition: {x: -.0743699968, y: .0465199985, z: -.121260002}
-  m_LocalScale: {x: .00096263719, y: .00096263719, z: .00126695645}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: .0263513252, y: .0019836165, z: -.0253282543}
+  m_LocalScale: {x: .00082795549, y: .000827955548, z: .00108969712}
   m_Children: []
-  m_Father: {fileID: 1134842305}
-  m_RootOrder: 2
+  m_Father: {fileID: 2042068285}
+  m_RootOrder: 0
 --- !u!82 &1673761876
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10952,7 +10951,7 @@ Transform:
   m_Children:
   - {fileID: 1074646201}
   m_Father: {fileID: 1134842305}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!65 &1906306489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11735,7 +11734,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 4.80999994, z: 3.6500001}
   m_LocalScale: {x: 117.015991, y: 117.015953, z: 117.015953}
-  m_Children: []
+  m_Children:
+  - {fileID: 1673761875}
   m_Father: {fileID: 776246543}
   m_RootOrder: 1
 --- !u!114 &2042068286

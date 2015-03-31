@@ -37,7 +37,7 @@ public class CharacterSpeech : MonoBehaviour
 			if(Time.time <= speechTimer + 10)
 			{
 
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 100, 500, 40), "Ugh, my head. Wh- what is this place? Better have a look around.", fontDetails);
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Ugh, my head. Wh- what is this place? Better have a look around.", fontDetails);
 			}
 			else
 			{
