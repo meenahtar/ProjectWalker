@@ -12,7 +12,8 @@ public class ReadNote : MonoBehaviour {
 
 	bool open;
 	bool enter;
-	bool getKey;
+	public bool firstRead;
+	public bool displayText;
 
 	Sprite noteSprite;
 	string noteName;
@@ -27,7 +28,8 @@ public class ReadNote : MonoBehaviour {
 
 		open = false;
 		enter = false;
-		getKey = false;
+		firstRead = true;
+		displayText = false;
 
 		//noteName = gameObject.name;
 		//noteName = "note2";
@@ -46,37 +48,40 @@ public class ReadNote : MonoBehaviour {
 
 		if(Input.GetKeyDown("g") && enter)
 		{
+			//If its the users first time reading note display story dialogue
+
 			if (open) 
 			{
-				//Check if note2 was read
-				/*if(noteName == "note2")
-				{
-					getKey = true;
-					print("Working");
-				}*/
-				print ("working");
 				note.SetActive(false);
 				open = false;
 				FPC.GetComponent<MouseLook>().enabled = true;
 				FPC.GetComponent<CharacterMotor>().enabled = true;
 				MC.GetComponent<MouseLook>().enabled = true;
+
+				if(firstRead)
+				{
+					firstRead = false;
+					displayText = true;
+				}
+
 			}
 			else
 			{
 				noteName = gameObject.name;
 				noteSprite = Resources.Load<Sprite>(noteName);
 				note.GetComponent<Image>().sprite = noteSprite;
-
 				note.SetActive(true);
 				open = true;
 				FPC.GetComponent<MouseLook>().enabled = false;
 				FPC.GetComponent<CharacterMotor>().enabled = false;
 				MC.GetComponent<MouseLook>().enabled = false;
+			}
 
-
+			if(Time.time <= FPC.GetComponent<CharacterSpeech>().speechTimer + 6 && displayText)
+			{
+				displayText = false;
 			}
 		}
-
 	}
 
 	void OnGUI()

@@ -3,12 +3,13 @@ using System.Collections;
 
 public class CharacterSpeech : MonoBehaviour 
 {
-	float speechTimer;
+	public float speechTimer;
 	bool startGame;
-	bool firstTimeThrough;
+	public bool firstTimeThrough;
 	public bool keyObtained;
 	GUIStyle fontDetails;
 	GameObject doorEnter;
+	GameObject note1Read;
 
 	// Use this for initialization
 	void Start () 
@@ -20,6 +21,8 @@ public class CharacterSpeech : MonoBehaviour
 		fontDetails.normal.textColor = Color.white;
 		fontDetails.fontSize = 20;
 		doorEnter = GameObject.Find ("Door1");
+		note1Read = GameObject.Find ("Note1");
+
 
 
 	}
@@ -68,10 +71,28 @@ public class CharacterSpeech : MonoBehaviour
 			}
 			else
 			{
-				startGame = false;
 				firstTimeThrough = true;
 			}
 			
+		}
+		
+		else if (note1Read.GetComponent<ReadNote>().displayText == true)
+		{
+			if(firstTimeThrough)
+			{
+				speechTimer = Time.time;
+				firstTimeThrough = false;
+			}
+			if(Time.time <= speechTimer + 6)
+			{
+				
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Well then. I suppose there ought to be a key somewhere around here...", fontDetails);
+			}
+			else
+			{
+				firstTimeThrough = true;
+			}
+
 		}
 		
 	}
