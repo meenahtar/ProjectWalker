@@ -26,15 +26,12 @@ public class Moveable : MonoBehaviour {
 		if (Input.GetKeyDown ("f") && enterRange) {
 			difference = playerReference.transform.position - transform.position;
 		}
-
-		CheckForGround();
+	
 
 		if (Input.GetKey ("f") && enterRange) {
-				newPosition = new Vector3 (playerReference.transform.position.x - difference.x, playerReference.transform.position.y - difference.y, playerReference.transform.position.z - difference.z);
-				GetComponent<Rigidbody> ().MovePosition (newPosition);
-		}  else if (!IsGrounded) {
-			transform.Translate(-Vector2.up * Gravity * Time.deltaTime);
-		}
+			newPosition = new Vector3 (playerReference.transform.position.x - difference.x, chairStartPos.y, playerReference.transform.position.z - difference.z);
+			GetComponent<Rigidbody> ().MovePosition (newPosition);
+		} 
 	}
 
 	void OnGUI(){
@@ -43,22 +40,12 @@ public class Moveable : MonoBehaviour {
 		}
 	}
 
-	void CheckForGround(){
-		if(transform.position.y < chairStartPos.y)
-		{
-			// Cache the position
-			Vector3 position = transform.position;
-			// Set Y component to floor level
-			position.y = chairStartPos.y;
-			// Assign new position
-			transform.position = position;
-		}
-	}
+
 
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "Player") {
-				enterRange = true;
+			enterRange = true;
 		} else {
 			enterRange = false;
 		}
