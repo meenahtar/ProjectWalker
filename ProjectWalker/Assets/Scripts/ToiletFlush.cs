@@ -20,6 +20,14 @@ public class ToiletFlush : MonoBehaviour {
 		} 
 	}
 
+	void OnGUI()
+	{
+		if(enterRange)
+		{
+			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 160, 150, 30), "Press 'G' to flush toilet");
+		}
+	}
+
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "Player") {
