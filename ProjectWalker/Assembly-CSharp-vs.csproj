@@ -49,8 +49,8 @@
      <Compile Include="Assets\Scripts\CharacterSpeech.cs" />
      <Compile Include="Assets\Scripts\GUICrosshair.cs" />
      <Compile Include="Assets\Scripts\GetKey.cs" />
+     <Compile Include="Assets\Scripts\LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Moveable.cs" />
-     <Compile Include="Assets\Scripts\Note1.cs" />
      <Compile Include="Assets\Scripts\OpenableDesk.cs" />
      <Compile Include="Assets\Scripts\OpenableVent.cs" />
      <Compile Include="Assets\Scripts\ReadNote.cs" />
