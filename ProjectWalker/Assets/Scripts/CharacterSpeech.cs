@@ -56,7 +56,7 @@ public class CharacterSpeech : MonoBehaviour
 
 		}
 
-		else if (!keyObtained && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
+		else if (!keyObtained && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false && doorEnter.GetComponent<LockedDoor>().usedKey == false)
 		{
 			if(firstTimeThrough)
 			{
