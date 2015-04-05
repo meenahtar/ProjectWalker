@@ -5,6 +5,7 @@ public class CharacterSpeech : MonoBehaviour
 {
 	public float speechTimer;
 	bool startGame;
+	bool isDoor1;
 	public bool firstTimeThrough;
 	public bool keyObtained;
 	GUIStyle fontDetails;
@@ -22,6 +23,7 @@ public class CharacterSpeech : MonoBehaviour
 		fontDetails.fontSize = 20;
 		doorEnter = GameObject.Find ("Door1");
 		note1Read = GameObject.Find ("Note1");
+		isDoor1 = false;
 
 
 
@@ -30,7 +32,18 @@ public class CharacterSpeech : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-	
+
+	}
+
+	void OnTriggerEnter (Collider other){
+		if (other.gameObject.tag == "Door1") 
+		{
+			isDoor1 = true;
+		} 
+		else 
+		{
+			isDoor1 = false;
+		}
 	}
 
 	void OnGUI()
@@ -43,7 +56,7 @@ public class CharacterSpeech : MonoBehaviour
 				firstTimeThrough = false;
 			}
 
-			if(Time.time <= speechTimer + 10)
+			if(Time.time <= speechTimer + 8)
 			{
 
 				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Ugh, my head. Wh- what is this place? Better have a look around.", fontDetails);
@@ -56,7 +69,7 @@ public class CharacterSpeech : MonoBehaviour
 
 		}
 
-		else if (!keyObtained && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false && doorEnter.GetComponent<LockedDoor>().usedKey == false)
+		else if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
 		{
 			if(firstTimeThrough)
 			{
@@ -68,6 +81,26 @@ public class CharacterSpeech : MonoBehaviour
 			{
 				
 				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "The door is locked", fontDetails);
+			}
+			else
+			{
+				firstTimeThrough = true;
+			}
+			
+		}
+
+		else if (keyObtained == true)
+		{
+			if(firstTimeThrough)
+			{
+				speechTimer = Time.time;
+				firstTimeThrough = false;
+			}
+			
+			if(Time.time <= speechTimer + 5 && firstTimeThrough == false)
+			{
+				
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Alright, time to get out of this room", fontDetails);
 			}
 			else
 			{
@@ -90,9 +123,30 @@ public class CharacterSpeech : MonoBehaviour
 			}
 			else
 			{
+				note1Read.GetComponent<ReadNote>().displayText = false;
 				firstTimeThrough = true;
 			}
 
+		}
+
+		else if (doorEnter.GetComponent<LockedDoor>().open && isDoor1)
+		{
+			if(firstTimeThrough)
+			{
+				speechTimer = Time.time;
+				firstTimeThrough = false;
+			}
+			
+			if(Time.time <= speechTimer + 5 && firstTimeThrough == false)
+			{
+				
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Whoa, Deja Vu", fontDetails);
+			}
+			else
+			{
+				firstTimeThrough = true;
+			}
+			
 		}
 		
 	}

@@ -57,12 +57,12 @@ public class ReadNote : MonoBehaviour {
 				FPC.GetComponent<MouseLook>().enabled = true;
 				FPC.GetComponent<CharacterMotor>().enabled = true;
 				MC.GetComponent<MouseLook>().enabled = true;
-
-				if(firstRead)
+				displayText = true;
+				/*if(firstRead)
 				{
 					firstRead = false;
 					displayText = true;
-				}
+				}*/
 
 			}
 			else
