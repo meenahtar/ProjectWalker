@@ -137,15 +137,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.160004
+      value: 105.099998
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -.140000001
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 91.5500031
+      value: 114.099998
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_LocalRotation.x
@@ -165,7 +165,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
       propertyPath: m_LocalScale.x
@@ -183,6 +183,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b13c139bd2550f3449ec4cf7f6d47fa0, type: 2}
+    - target: {fileID: 400006, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: .226799995
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -.138300002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -.0750999972
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86ff3413956fdda4994ce5648d3e7659, type: 3}
   m_RootGameObject: {fileID: 1926341289}
@@ -6847,7 +6859,6 @@ MonoBehaviour:
   DoorOpenAngle: 90
   open: 0
   enter: 0
-  usedKey: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!65 &877790809
@@ -8267,7 +8278,6 @@ MonoBehaviour:
   DoorOpenAngle: 90
   open: 0
   enter: 0
-  usedKey: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!65 &976188502
@@ -10651,7 +10661,6 @@ MonoBehaviour:
   DoorOpenAngle: 90
   open: 0
   enter: 0
-  usedKey: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!82 &1212520686
@@ -14177,7 +14186,7 @@ Transform:
   m_PrefabInternal: {fileID: 12918633}
   m_GameObject: {fileID: 1560075256}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .226799995, y: -.0750999972, z: -.138300002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1926341290}
@@ -17025,6 +17034,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1926341290}
   - 95: {fileID: 1926341291}
+  - 65: {fileID: 1926341293}
+  - 64: {fileID: 1926341292}
   m_Layer: 0
   m_Name: KeypadExport
   m_TagString: Untagged
@@ -17039,7 +17050,7 @@ Transform:
   m_PrefabInternal: {fileID: 12918633}
   m_GameObject: {fileID: 1926341289}
   m_LocalRotation: {x: 0, y: .190640792, z: 0, w: .981659889}
-  m_LocalPosition: {x: 122.160004, y: -.140000001, z: 91.5500031}
+  m_LocalPosition: {x: 105.099998, y: 8, z: 114.099998}
   m_LocalScale: {x: 105.894203, y: 105.894386, z: 105.894386}
   m_Children:
   - {fileID: 1091198814}
@@ -17048,7 +17059,7 @@ Transform:
   - {fileID: 2120343771}
   - {fileID: 989318133}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!95 &1926341291
 Animator:
   serializedVersion: 3
@@ -17065,6 +17076,31 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!64 &1926341292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926341289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 0}
+--- !u!65 &1926341293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926341289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0106572043, y: .0393521674, z: .011016719}
+  m_Center: {x: .228460342, y: -.0559734106, z: -.132501259}
 --- !u!1 &1934679630
 GameObject:
   m_ObjectHideFlags: 0
@@ -17238,7 +17274,6 @@ MonoBehaviour:
   DoorOpenAngle: 90
   open: 0
   enter: 0
-  usedKey: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!65 &1936285792
@@ -17817,7 +17852,7 @@ Transform:
   - {fileID: 1135114441}
   - {fileID: 1009155758}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!95 &2028520814
 Animator:
   serializedVersion: 3
