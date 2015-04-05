@@ -15,7 +15,7 @@ public class KeypadScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (enterRange == true) 
+		if (enterRange == true && Input.GetKeyDown("f")) 
 		{
 
 		}
