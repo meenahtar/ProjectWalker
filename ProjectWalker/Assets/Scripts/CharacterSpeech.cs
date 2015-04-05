@@ -8,10 +8,17 @@ public class CharacterSpeech : MonoBehaviour
 	bool isDoor1;
 	public bool firstTimeThrough;
 	public bool keyObtained;
+	bool displayText;
 	GUIStyle fontDetails;
 	GameObject doorEnter;
 	GameObject note1Read;
-
+	
+	
+	bool firstStart;
+	bool firstKey;
+	bool firstNote;
+	bool firstDoor;
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,8 +32,10 @@ public class CharacterSpeech : MonoBehaviour
 		note1Read = GameObject.Find ("Note1");
 		isDoor1 = false;
 
-
-
+		firstStart = true;
+		firstNote = true;
+		firstKey = true;
+		firstDoor = true;
 	}
 
 	// Update is called once per frame
@@ -40,115 +49,78 @@ public class CharacterSpeech : MonoBehaviour
 		{
 			isDoor1 = true;
 		} 
-		else 
-		{
-			isDoor1 = false;
-		}
 	}
-
+	
 	void OnGUI()
 	{
+		// On game start
 		if (startGame)
 		{
-			if(firstTimeThrough)
+			if(firstStart)
 			{
 				speechTimer = Time.time;
-				firstTimeThrough = false;
+				firstStart = false;
 			}
 
-			if(Time.time <= speechTimer + 8)
+			if(Time.time <= speechTimer + 4)
 			{
-
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Ugh, my head. Wh- what is this place? Better have a look around.", fontDetails);
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Ugh, my head. Wh- what is this place? Better have a look around....", fontDetails);
 			}
-			else
-			{
+			else{
 				startGame = false;
-				firstTimeThrough = true;
 			}
-
-		}
-
-		else if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
-		{
-			if(firstTimeThrough)
-			{
-				speechTimer = Time.time;
-				firstTimeThrough = false;
-			}
-			
-			if(Time.time <= speechTimer + 10)
-			{
-				
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "The door is locked", fontDetails);
-			}
-			else
-			{
-				firstTimeThrough = true;
-			}
-			
-		}
-
-		else if (keyObtained == true)
-		{
-			if(firstTimeThrough)
-			{
-				speechTimer = Time.time;
-				firstTimeThrough = false;
-			}
-			
-			if(Time.time <= speechTimer + 5 && firstTimeThrough == false)
-			{
-				
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Alright, time to get out of this room", fontDetails);
-			}
-			else
-			{
-				firstTimeThrough = true;
-			}
-			
-		}
-		
+		}	
+		// On first note read
 		else if (note1Read.GetComponent<ReadNote>().displayText == true)
 		{
-			if(firstTimeThrough)
+			if(firstNote)
 			{
 				speechTimer = Time.time;
-				firstTimeThrough = false;
+				firstNote = false;
 			}
 			if(Time.time <= speechTimer + 6)
 			{
-				
 				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Well then. I suppose there ought to be a key somewhere around here...", fontDetails);
-			}
-			else
-			{
-				note1Read.GetComponent<ReadNote>().displayText = false;
-				firstTimeThrough = true;
-			}
-
-		}
-
-		else if (doorEnter.GetComponent<LockedDoor>().open && isDoor1)
-		{
-			if(firstTimeThrough)
-			{
-				speechTimer = Time.time;
-				firstTimeThrough = false;
-			}
-			
-			if(Time.time <= speechTimer + 5 && firstTimeThrough == false)
-			{
-				
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Whoa, Deja Vu", fontDetails);
-			}
-			else
-			{
-				firstTimeThrough = true;
-			}
-			
+			}			
 		}
 		
+		// On key pickup
+		else if (keyObtained == true)
+		{
+			if(firstKey)
+			{
+				speechTimer = Time.time;
+				firstKey = false;
+			}
+			if(Time.time <= speechTimer + 5)
+			{
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Alright, time to get out of this room", fontDetails);
+			}
+		}
+		
+		// On door collision
+		if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
+		{
+			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "The door is locked", fontDetails);			
+		}
+		else if(doorEnter.GetComponent<LockedDoor>().open == true && doorEnter.GetComponent<LockedDoor>().enter == true){
+			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Whoa, Deja Vu", fontDetails);
+		}
 	}
-
+	
+	void showText(bool cond, string text, int displayTime){
+		if(cond){
+			speechTimer = Time.time;
+			cond = !cond;
+		}
+		
+		if(Time.time <= speechTimer + displayTime){
+			//display text
+			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), text, fontDetails);		
+		}
+		else{
+		}
+	}
 }
+
+
