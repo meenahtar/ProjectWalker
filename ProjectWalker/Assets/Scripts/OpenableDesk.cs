@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OpenableDesk : MonoBehaviour {
 	
-	bool opened;
+	public bool opened;
 	bool enterRange;
 
 	

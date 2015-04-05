@@ -9,10 +9,10 @@ public class ReadNote2 : MonoBehaviour {
 	GameObject FPC;
 	//main camera
 	GameObject MC;
+	GameObject drawer;
 	
 	bool open;
 	bool enter;
-	public bool getKey;
 	
 	Sprite noteSprite;
 	string noteName;
@@ -26,11 +26,12 @@ public class ReadNote2 : MonoBehaviour {
 		//note = GameObject.Find("Note1").GetComponent<ReadNote> ().note;
 		FPC = GameObject.Find ("First Person Controller");
 		MC = GameObject.Find ("Main Camera");
+		drawer = GameObject.Find("deskDrawer");
 		note = this.gameObject;
 		
 		open = false;
 		enter = false;
-		getKey = false;
+
 		
 		//noteName = gameObject.name;
 		//noteName = "note2";
@@ -47,17 +48,12 @@ public class ReadNote2 : MonoBehaviour {
 	{
 		//note.GetComponent<Image> ().SetActive(true);
 
-		
+		//print (drawer.GetComponent<OpenableDesk> ().opened);
 		if(Input.GetKeyDown("g") && enter)
 		{
 			if (open) 
 			{
-				//Check if note2 was read
-				if(noteName == "Note2")
-				{
-					getKey = true;
-					print("Working");
-				}
+
 				note.SetActive(false);
 				open = false;
 				FPC.GetComponent<MouseLook>().enabled = true;
@@ -93,8 +89,9 @@ public class ReadNote2 : MonoBehaviour {
 			else {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 160, 150, 30), "Press 'G' to read note");
 			}
-			
 		}
+			
+
 	}
 	
 	//If player enters note zone
