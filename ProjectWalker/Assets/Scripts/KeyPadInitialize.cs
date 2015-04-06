@@ -30,7 +30,7 @@ public class KeyPadInitialize : MonoBehaviour {
 			MC.GetComponent<MouseLook>().enabled = false;
 
 			accessing = true;
-			keyPadControl.SetActive(true);
+			keyPadBacks.SetActive(true);
 		}
 	}
 
