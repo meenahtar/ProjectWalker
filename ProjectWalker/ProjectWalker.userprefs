@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ReadNote2.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FuseBox.cs">
     <Files>
-      <File FileName="Assets\Scripts\OpenableDesk.cs" Line="19" Column="40" />
-      <File FileName="Assets\Scripts\ReadNote2.cs" Line="17" Column="20" />
+      <File FileName="Assets\Scripts\FuseBox.cs" Line="34" Column="2" />
+      <File FileName="Assets\Scripts\OpenableDesk.cs" Line="37" Column="2" />
+      <File FileName="Assets\Scripts\ReadNote2.cs" Line="29" Column="12" />
+      <File FileName="Assets\Scripts\DarknessWall.cs" Line="9" Column="32" />
+      <File FileName="Assets\Scripts\CharacterSpeech.cs" Line="100" Column="168" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
