@@ -48,8 +48,8 @@ public class ReadNote2 : MonoBehaviour {
 	{
 		//note.GetComponent<Image> ().SetActive(true);
 
-		//print (drawer.GetComponent<OpenableDesk> ().opened);
-		if(Input.GetKeyDown("g") && enter)
+		print (drawer.GetComponent<OpenableDesk> ().opened);
+		if(Input.GetKeyDown("g") && enter && drawer.GetComponent<OpenableDesk>().opened == true)
 		{
 			if (open) 
 			{
@@ -81,7 +81,7 @@ public class ReadNote2 : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(enter)
+		if(enter && drawer.GetComponent<OpenableDesk>().opened == true)
 		{
 			if (open) {
 				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 160, 150, 30), "Press 'G' to close note");
