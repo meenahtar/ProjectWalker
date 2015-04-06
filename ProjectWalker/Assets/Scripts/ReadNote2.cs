@@ -48,7 +48,7 @@ public class ReadNote2 : MonoBehaviour {
 	{
 		//note.GetComponent<Image> ().SetActive(true);
 
-		print (drawer.GetComponent<OpenableDesk> ().opened);
+		//print (drawer.GetComponent<OpenableDesk> ().opened);
 		if(Input.GetKeyDown("g") && enter && drawer.GetComponent<OpenableDesk>().opened == true)
 		{
 			if (open) 
