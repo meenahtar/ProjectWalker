@@ -15,8 +15,9 @@ public class CharacterSpeech : MonoBehaviour
 	
 	
 	bool firstStart;
-	bool firstKey;
 	bool firstNote;
+	bool firstKey;
+	bool firstBudge;
 	bool firstDoor;
 	
 	// Use this for initialization
@@ -35,6 +36,7 @@ public class CharacterSpeech : MonoBehaviour
 		firstStart = true;
 		firstNote = true;
 		firstKey = true;
+		firstBudge = true;
 		firstDoor = true;
 	}
 
@@ -99,13 +101,25 @@ public class CharacterSpeech : MonoBehaviour
 		}
 		
 		// On door collision
-		if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
+		if(keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false && Input.GetKeyDown("f")){
+			if(firstBudge)
+			{
+				speechTimer = Time.time;
+				firstBudge = false;
+			}
+			if(Time.time <= speechTimer + 5)
+			{
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "It won’t budge. I must be missing something.", fontDetails);
+			}
+		}
+		else if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
 		{
 			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "The door is locked", fontDetails);			
 		}
 		else if(doorEnter.GetComponent<LockedDoor>().open == true && doorEnter.GetComponent<LockedDoor>().enter == true){
 			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Whoa, Deja Vu", fontDetails);
 		}
+		
 	}
 	
 	void showText(bool cond, string text, int displayTime){
