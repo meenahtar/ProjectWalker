@@ -14,7 +14,7 @@ public class KeyPadInitialize : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		keyPadBacks = GameObject.Find ("KeyPadBacks").GetComponent<keyPadControl> ();
+		keyPadBacks = GameObject.Find ("KeyPadBacks");
 		keyPadBacks.SetActive (false);
 
 		FPC = GameObject.Find ("First Person Controller");
@@ -23,12 +23,13 @@ public class KeyPadInitialize : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (enterRange && Input.GetKeyDown ("f")) {
+		if (enterRange && Input.GetKeyDown ("f") && !accessing) {
 			//disable FPC
 			FPC.GetComponent<MouseLook>().enabled = false;
 			FPC.GetComponent<CharacterMotor>().enabled = false;
 			MC.GetComponent<MouseLook>().enabled = false;
 
+			accessing = true;
 			keyPadControl.SetActive(true);
 		}
 	}
