@@ -15,6 +15,7 @@ public class KeyPadControl : MonoBehaviour {
 	GameObject keyPadBack9;
 
 	bool keyDown;
+	int lastKeyDown;
 	int keyCounter;
 	bool keyCodeCompleted;
 	bool codeVerification;
@@ -38,7 +39,7 @@ public class KeyPadControl : MonoBehaviour {
 		codeVerification = false;
 		codeAnswer = "1943";
 		codeEntered = "";
-		errorTimer = 3;
+		errorTimer = 2.5f;
 		errorStatus = false;
 	}
 	
@@ -99,6 +100,7 @@ public class KeyPadControl : MonoBehaviour {
 					for (int i = 1; i < 10; i++){
 						if (Input.GetKeyDown (i.ToString()) && !keyDown) {
 							keyDown = true;
+							lastKeyDown = i;
 							codeEntered = codeEntered + i.ToString();
 							
 							//change keyBack color to pressed (grey?)
@@ -121,7 +123,7 @@ public class KeyPadControl : MonoBehaviour {
 
 							print("GetKeyUp: " + i.ToString());
 
-							if (codeEntered[codeEntered.Length - 1].Equals((char)i)) {
+							if (i == lastKeyDown) {
 
 								print("Code Last Index Comparison Success");
 
