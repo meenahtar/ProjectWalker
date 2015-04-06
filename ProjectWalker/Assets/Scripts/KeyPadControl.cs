@@ -25,6 +25,10 @@ public class KeyPadControl : MonoBehaviour {
 	float errorTimeStart;
 	float errorTimer;
 	bool errorStatus;
+
+	float successTimeStart;
+	float successTimer;
+	bool successStatus;
 	
 	// Use this for initialization
 	void Start () {
@@ -41,12 +45,20 @@ public class KeyPadControl : MonoBehaviour {
 		codeEntered = "";
 		errorTimer = 2.5f;
 		errorStatus = false;
+		successTimer = 5.0f;
+		successStatus = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (keyCounter == 4) {
 			keyCodeCompleted = true;
+		}
+
+		if (successStatus) {
+			if (Time.time - successTimeStart > successTimer) {
+				Application.LoadLevel("prototype");
+			}
 		}
 
 		if (errorStatus) {
@@ -73,6 +85,10 @@ public class KeyPadControl : MonoBehaviour {
 					}
 					//other victory reactions (final cutscene?)
 					// ---
+					if (!successStatus) {
+						successStatus = true;
+						successTimeStart = Time.time;
+					}
 				}
 				else
 				{
