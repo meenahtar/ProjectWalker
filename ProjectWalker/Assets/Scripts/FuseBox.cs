@@ -28,6 +28,7 @@ public class FuseBox : MonoBehaviour {
 		{
 			//source.PlayOneShot(lightSwitchNoise, 4f);
 			// turn on lights in room 3
+			lightsOn = true;
 			darknessWall.SetActive(false);
 		}
 	}

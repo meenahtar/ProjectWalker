@@ -1,7 +1,7 @@
 ﻿// Smothly open a door
 var smooth = 2.0;
 var DoorOpenAngle = 90.0;
-private var open : boolean;
+public var open : boolean;
 private var enter : boolean;
 
 private var defaultRot : Vector3;
