@@ -23,7 +23,10 @@ public class KeyPadInitialize : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (enterRange && Input.GetKeyDown ("f")) {
+		if (enterRange && Input.GetKeyDown ("f") && !accessing) {
+
+			FPC.GetComponent<CameraSwitch>().useKeyPad();
+
 			//disable FPC
 			FPC.GetComponent<MouseLook>().enabled = false;
 			FPC.GetComponent<CharacterMotor>().enabled = false;
@@ -32,13 +35,27 @@ public class KeyPadInitialize : MonoBehaviour {
 			accessing = true;
 			keyPadBacks.SetActive(true);
 		}
+		else if (enterRange && Input.GetKeyDown ("f") && accessing) {
+
+			FPC.GetComponent<CameraSwitch>().stopUseKeyPad();
+
+			//disable FPC
+			FPC.GetComponent<MouseLook>().enabled = true;
+			FPC.GetComponent<CharacterMotor>().enabled = true;
+			MC.GetComponent<MouseLook>().enabled = true;
+			
+			accessing = false;
+			keyPadBacks.SetActive(false);
+		}
 	}
 
 	void OnGUI()
 	{
-		if(enterRange && !accessing) {
-				GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to use keypad");
-			}
+		if (enterRange && !accessing) {
+			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'F' to use keypad");
+		} else if (enterRange && accessing) {
+			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'F' to stop using keypad");
+		}
 	}
 
 	void OnTriggerEnter(Collider other) 
