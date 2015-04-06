@@ -5,39 +5,52 @@ public class CharacterSpeech : MonoBehaviour
 {
 	public float speechTimer;
 	bool startGame;
-	bool isDoor1;
-	public bool firstTimeThrough;
+	
 	public bool keyObtained;
-	bool displayText;
+	public bool screwDriverObtained;
+	
 	GUIStyle fontDetails;
-	GameObject doorEnter;
+	GameObject doorEnter1;
+	GameObject doorEnter2;
+	GameObject chair3;
 	GameObject note1Read;
 	
+	bool enteredDoor2;
+	bool enteredChair3;
 	
 	bool firstStart;
 	bool firstNote;
 	bool firstKey;
-	bool firstBudge;
-	bool firstDoor;
+	bool firstDoor2;
+	bool firstScrew;
+	bool firstChair;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		startGame = true;
+		
 		keyObtained = false;
-		firstTimeThrough = true;
+		screwDriverObtained = false;
+
 		fontDetails = new GUIStyle ();
 		fontDetails.normal.textColor = Color.white;
 		fontDetails.fontSize = 20;
-		doorEnter = GameObject.Find ("Door1");
+		doorEnter1 = GameObject.Find ("Door1");
+		doorEnter2 = GameObject.Find ("Door2");
+		chair3 = GameObject.Find ("Chair 3");
 		note1Read = GameObject.Find ("Note1");
-		isDoor1 = false;
 
+		enteredDoor2 = false;
+		enteredChair3 = false;
+		
+		
 		firstStart = true;
 		firstNote = true;
 		firstKey = true;
-		firstBudge = true;
-		firstDoor = true;
+		firstDoor2 = true;
+		firstScrew = true;
+		firstChair = true;
 	}
 
 	// Update is called once per frame
@@ -47,10 +60,7 @@ public class CharacterSpeech : MonoBehaviour
 	}
 
 	void OnTriggerEnter (Collider other){
-		if (other.gameObject.tag == "Door1") 
-		{
-			isDoor1 = true;
-		} 
+
 	}
 	
 	void OnGUI()
@@ -85,54 +95,80 @@ public class CharacterSpeech : MonoBehaviour
 				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Well then. I suppose there ought to be a key somewhere around here...", fontDetails);
 			}			
 		}
-		
 		// On key pickup
-		else if (keyObtained == true)
+		else if (keyObtained)
 		{
 			if(firstKey)
 			{
 				speechTimer = Time.time;
 				firstKey = false;
 			}
+
 			if(Time.time <= speechTimer + 5)
 			{
 				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Alright, time to get out of this room", fontDetails);
 			}
 		}
-		
-		// On door collision
-		if(keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false && Input.GetKeyDown("f")){
-			if(firstBudge)
-			{
+		// On second door enter
+		else if(enteredDoor2){
+			if(firstDoor2){
 				speechTimer = Time.time;
-				firstBudge = false;
+				firstDoor2 = false;
 			}
-			if(Time.time <= speechTimer + 5)
-			{
-				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "It won’t budge. I must be missing something.", fontDetails);
+			
+			if(Time.time <= speechTimer + 5){
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Another locked door, huh? This day just keeps getting better and better", fontDetails);		
+			} 
+			else{
+				enteredDoor2 = false;
 			}
 		}
-		else if (keyObtained == false && doorEnter.GetComponent<LockedDoor>().enter == true && doorEnter.GetComponent<LockedDoor>().open == false)
+		else if(screwDriverObtained && !enteredChair3){
+			if(firstScrew){
+				speechTimer = Time.time;
+				firstScrew = false;
+			}
+			
+			if(Time.time <= speechTimer + 4){
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "I've definitely seen this screwdriver before...", fontDetails);
+			}
+		}
+		else if(enteredChair3){
+			if(firstChair){
+				speechTimer = Time.time;
+				firstChair = false;
+			}
+			
+			if(Time.time <= speechTimer + 4){
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Perhaps this chair will be of use to me.", fontDetails);
+			}
+			else{
+				enteredChair3 = false;
+			}
+		}
+
+
+		
+		
+		// On first locked door collision
+		if (keyObtained == false && doorEnter1.GetComponent<LockedDoor>().enter == true && doorEnter1.GetComponent<LockedDoor>().open == false)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "The door is locked", fontDetails);			
+			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "This seems to be locked", fontDetails);			
 		}
-		else if(doorEnter.GetComponent<LockedDoor>().open == true && doorEnter.GetComponent<LockedDoor>().enter == true){
+		else if(doorEnter1.GetComponent<LockedDoor>().open == true && doorEnter1.GetComponent<LockedDoor>().enter == true){
 			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "Whoa, Deja Vu", fontDetails);
 		}
 		
-	}
-	
-	void showText(bool cond, string text, int displayTime){
-		if(cond){
-			speechTimer = Time.time;
-			cond = !cond;
+		// On second locked door collision
+		if (keyObtained == false && doorEnter2.GetComponent<LockedDoor>().enter == true && doorEnter2.GetComponent<LockedDoor>().open == false)
+		{
+			enteredDoor2 = true;
 		}
 		
-		if(Time.time <= speechTimer + displayTime){
-			//display text
-			GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), text, fontDetails);		
-		}
-		else{
+		// On chair collision
+		if(screwDriverObtained && chair3.GetComponent<Moveable>().enterRange){
+			print("Entered chair");
+			enteredChair3 = true;
 		}
 	}
 }

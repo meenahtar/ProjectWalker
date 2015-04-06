@@ -6,15 +6,14 @@ public class Screwdriver : MonoBehaviour {
 	GameObject screwDriver;
 
 	bool enter;
-
-	public bool screwDriverObtained;
-
+	
+	GameObject FPC;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		screwDriver = GameObject.Find ("Screw Driver");
-		screwDriverObtained = false;
+		FPC = GameObject.Find ("First Person Controller");
 		screwDriver.SetActive (true);
 	}
 	
@@ -23,7 +22,7 @@ public class Screwdriver : MonoBehaviour {
 	{
 		if(Input.GetKeyDown("g") && enter)
 		{
-			screwDriverObtained = true;
+			FPC.GetComponent<CharacterSpeech>().screwDriverObtained = true;
 			screwDriver.SetActive(false);
 		}
 	}

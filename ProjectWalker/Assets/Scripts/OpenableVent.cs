@@ -8,7 +8,7 @@ public class OpenableVent : MonoBehaviour {
 	bool opened;
 
 	GameObject vent;
-	GameObject screwDriver;
+	GameObject FPC;
 	GameObject ventKey;
 
 	public AudioClip lockedSound;
@@ -20,7 +20,7 @@ public class OpenableVent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		vent = GameObject.Find ("Vent");
-		screwDriver = GameObject.Find ("Screw Driver");
+		FPC = GameObject.Find ("First Person Controller");
 		ventKey = GameObject.Find ("Vent Key");
 		ventKey.SetActive (false);
 
@@ -32,21 +32,9 @@ public class OpenableVent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("f") && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true) {
+		if (Input.GetKeyDown ("f") && FPC.GetComponent<CharacterSpeech>().screwDriverObtained == true) {
 			pressedOpen = true;
 		} 
-
-		//if(Input.GetKeyDown ("f") && enterRange && GameObject.Find("Note2").GetComponent<ReadNote2>().getKey == false){
-		//	source.PlayOneShot(lockedSound, 4f);
-		//}
-		
-		
-		/*if (Input.GetKeyDown ("g") && enterRange) {
-			keyObtained = true;
-			GameObject key = GameObject.Find("Vent Key");
-			source.PlayOneShot(pickUpSound, 4f);
-			key.SetActive(false);
-		}*/
 		
 		if (pressedOpen && opened == false && enterRange && Input.GetKeyDown ("f")) {
 			opened = true;
@@ -58,13 +46,9 @@ public class OpenableVent : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if(enterRange && opened == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
+		if(enterRange && opened == false && FPC.GetComponent<CharacterSpeech>().screwDriverObtained == true){
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'F' to use screwdriver on vent");
 		}
-		//Get key
-		/*if(enterRange && opened && keyObtained == false && screwDriver.GetComponent<Screwdriver>().screwDriverObtained == true){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 350, 30), "Press 'G' to take key");
-		}*/
 	}
 
 	//Activate the Main function when player is near the door

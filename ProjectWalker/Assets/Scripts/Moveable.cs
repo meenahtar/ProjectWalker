@@ -4,7 +4,7 @@ using System.Collections;
 public class Moveable : MonoBehaviour {
 
 	GameObject playerReference;
-	bool enterRange;
+	public bool enterRange;
 	Vector3 difference;
 	Vector3 newPosition;
 	Vector3 chairStartPos;
