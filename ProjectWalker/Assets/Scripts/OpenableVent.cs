@@ -9,7 +9,6 @@ public class OpenableVent : MonoBehaviour {
 
 	GameObject vent;
 	GameObject FPC;
-	GameObject ventKey;
 
 	public AudioClip lockedSound;
 	public AudioClip openSound;
@@ -21,8 +20,6 @@ public class OpenableVent : MonoBehaviour {
 	void Start () {
 		vent = GameObject.Find ("Vent");
 		FPC = GameObject.Find ("First Person Controller");
-		ventKey = GameObject.Find ("Vent Key");
-		ventKey.SetActive (false);
 
 		pressedOpen = false;
 		opened = false;
@@ -38,7 +35,6 @@ public class OpenableVent : MonoBehaviour {
 		
 		if (pressedOpen && opened == false && enterRange && Input.GetKeyDown ("f")) {
 			opened = true;
-			ventKey.SetActive(true);
 			vent.SetActive(false);
   			source.PlayOneShot(openSound, 4f);
 		} 

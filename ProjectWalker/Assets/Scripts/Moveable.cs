@@ -5,6 +5,8 @@ public class Moveable : MonoBehaviour {
 
 	GameObject playerReference;
 	public bool enterRange;
+	public bool colliding;
+	
 	Vector3 difference;
 	Vector3 newPosition;
 	Vector3 chairStartPos;
@@ -28,7 +30,7 @@ public class Moveable : MonoBehaviour {
 		}
 	
 
-		if (Input.GetKey ("f") && enterRange) {
+		if (Input.GetKey ("f") && enterRange && !colliding) {
 			newPosition = new Vector3 (playerReference.transform.position.x - difference.x, chairStartPos.y, playerReference.transform.position.z - difference.z);
 			GetComponent<Rigidbody> ().MovePosition (newPosition);
 		} 
@@ -46,15 +48,26 @@ public class Moveable : MonoBehaviour {
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "Player") {
 			enterRange = true;
-		} else {
-			enterRange = false;
-		}
+		} 
 	}
 
 	//Deactivate the Main function when player is go away from door
 	void OnTriggerExit (Collider other){
 		if (other.gameObject.tag == "Player") {
 			enterRange = false;
+			colliding = false;
+		}
+	}
+	
+	void OnCollisionEnter(Collision other){
+		if(other.gameObject.tag != "Player"){
+			colliding = true;
+		}
+	}
+	
+	void OnCollisionExit(Collision other){
+		if(other.gameObject.tag != "Player"){
+			colliding = false;
 		}
 	}
 }
