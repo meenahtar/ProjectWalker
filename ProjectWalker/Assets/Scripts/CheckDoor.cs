@@ -4,7 +4,10 @@ using System.Collections;
 public class CheckDoor : MonoBehaviour {
 
 	GameObject bomb;
+	GameObject lighter;
+	GameObject door;
 	bool doorCheck;
+	public bool doorGone;
 	public bool bombPlaced;
 
 	// Use this for initialization
@@ -13,6 +16,8 @@ public class CheckDoor : MonoBehaviour {
 		doorCheck = false;
 		bombPlaced = false;
 		bomb = GameObject.Find ("Cherry Bomb");
+		lighter = GameObject.Find ("Lighter");
+		doorGone = false;
 	}
 	
 	// Update is called once per frame
@@ -23,19 +28,38 @@ public class CheckDoor : MonoBehaviour {
 		{
 			if (Input.GetKeyDown ("g")) 
 			{
-				bomb.GetComponent<BombScript>().enabled = false;
-				bomb.transform.Translate(new Vector3(17.5f, 5.0f, -15.0f), Space.Self);
-				bomb.SetActive(true);
-				bombPlaced = true;
+				if(bombPlaced == false) 
+				{
+					bomb.GetComponent<BombScript>().enabled = false;
+					bomb.transform.Translate(new Vector3(17.5f, 5.0f, -15.0f), Space.Self);
+					bomb.SetActive(true);
+					bombPlaced = true;
+				}
 			} 
+
+			if (Input.GetKeyDown ("f")) 
+			{
+				if(lighter.GetComponent<LighterPickup>().lighterObtained == true && bombPlaced)
+				{
+					bomb.SetActive(false);
+					door.SetActive(false);
+					doorGone = true;
+					
+				}
+			}
+
 
 		}
 	}
 
 	void OnGUI(){
-		if(doorCheck && bomb.GetComponent<BombScript>().bombObtained)
+		if (doorCheck && bomb.GetComponent<BombScript> ().bombObtained && bombPlaced == false) 
 		{
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'G' to place bomb");
+			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'G' to place bomb");
+		} 
+		else if (bombPlaced && doorCheck && doorGone == false) 
+		{
+			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'F' to light bomb");
 		}
 
 		
@@ -44,6 +68,7 @@ public class CheckDoor : MonoBehaviour {
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.name == "bombDoor") {
+			door = other.gameObject;
 			doorCheck = true;
 		}
 	}

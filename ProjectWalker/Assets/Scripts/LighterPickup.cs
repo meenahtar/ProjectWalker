@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BombScript : MonoBehaviour {
-	
-	GameObject bomb;
+public class LighterPickup : MonoBehaviour {
+
+	GameObject lighter;	
 	bool enter;
-	public bool bombObtained;
-	
+	GameObject FPC;
+	public bool lighterObtained;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		bomb = GameObject.Find ("Cherry Bomb");
-		bombObtained = false;
-		//screwDriver.SetActive (true);
+		lighterObtained = false;
+		lighter = GameObject.Find ("Lighter");
+		FPC = GameObject.Find ("First Person Controller");
+		lighter.SetActive (true);
 	}
 	
 	// Update is called once per frame
@@ -21,8 +22,9 @@ public class BombScript : MonoBehaviour {
 	{
 		if(Input.GetKeyDown("g") && enter)
 		{
-			bombObtained = true;
-			bomb.SetActive(false);
+			//FPC.GetComponent<CharacterSpeech>().screwDriverObtained = true;
+			lighterObtained = true;
+			lighter.SetActive(false);
 		}
 	}
 	
@@ -30,7 +32,7 @@ public class BombScript : MonoBehaviour {
 	{
 		if(enter)
 		{
-			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 100, 350, 30), "Press 'G' to grab Cherry Bomb");
+			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 100, 350, 30), "Press 'G' to grab lighter");
 		}
 	}
 	
@@ -51,4 +53,3 @@ public class BombScript : MonoBehaviour {
 		}
 	}
 }
-
