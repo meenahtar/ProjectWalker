@@ -32,7 +32,7 @@ public class LighterPickup : MonoBehaviour {
 	{
 		if(enter)
 		{
-			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 100, 350, 30), "Press 'G' to grab lighter");
+			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 150, 350, 30), "Press 'G' to grab lighter");
 		}
 	}
 	

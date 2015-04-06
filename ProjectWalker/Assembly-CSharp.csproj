@@ -48,10 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BombScript.cs" />
      <Compile Include="Assets\Scripts\CharacterSpeech.cs" />
+     <Compile Include="Assets\Scripts\CheckDoor.cs" />
+     <Compile Include="Assets\Scripts\DarknessWall.cs" />
+     <Compile Include="Assets\Scripts\FuseBox.cs" />
      <Compile Include="Assets\Scripts\GUICrosshair.cs" />
      <Compile Include="Assets\Scripts\GetKey.cs" />
+     <Compile Include="Assets\Scripts\KeyPadControl.cs" />
+     <Compile Include="Assets\Scripts\KeyPadInitialize.cs" />
      <Compile Include="Assets\Scripts\KeypadScript.cs" />
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\LighterPickup.cs" />
      <Compile Include="Assets\Scripts\Moveable.cs" />
      <Compile Include="Assets\Scripts\OpenableDesk.cs" />
      <Compile Include="Assets\Scripts\OpenableVent.cs" />
