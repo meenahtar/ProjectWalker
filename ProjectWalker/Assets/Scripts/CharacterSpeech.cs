@@ -14,9 +14,12 @@ public class CharacterSpeech : MonoBehaviour
 	GameObject doorEnter2;
 	GameObject chair3;
 	GameObject note1Read;
+	GameObject fuseBox;
+	GameObject darknessWall;
 	
 	bool enteredDoor2;
 	bool enteredChair3;
+	bool enteredWall;
 	
 	bool firstStart;
 	bool firstNote;
@@ -24,6 +27,7 @@ public class CharacterSpeech : MonoBehaviour
 	bool firstDoor2;
 	bool firstScrew;
 	bool firstChair;
+	bool firstWall;
 	
 	// Use this for initialization
 	void Start () 
@@ -40,10 +44,12 @@ public class CharacterSpeech : MonoBehaviour
 		doorEnter2 = GameObject.Find ("Door2");
 		chair3 = GameObject.Find ("Chair 3");
 		note1Read = GameObject.Find ("Note1");
-
+		fuseBox = GameObject.Find ("FuseBox");
+		darknessWall = GameObject.Find("Invisible Darkness Wall");
+		
 		enteredDoor2 = false;
 		enteredChair3 = false;
-		
+		enteredWall = false;
 		
 		firstStart = true;
 		firstNote = true;
@@ -51,6 +57,7 @@ public class CharacterSpeech : MonoBehaviour
 		firstDoor2 = true;
 		firstScrew = true;
 		firstChair = true;
+		firstWall = true;
 	}
 
 	// Update is called once per frame
@@ -146,9 +153,19 @@ public class CharacterSpeech : MonoBehaviour
 				enteredChair3 = false;
 			}
 		}
-
-
-		
+		else if(enteredWall){
+			if(firstWall){
+				speechTimer = Time.time;
+				firstWall = false;
+			}
+			
+			if(Time.time <= speechTimer + 4){
+				GUI.Label (new Rect (Screen.width / 2 - 250 , Screen.height - 200, 500, 40), "It's way too dark in there. Maybe if I fix this fusebox first…", fontDetails);
+			}
+			else{
+				enteredWall = false;
+			}
+		}
 		
 		// On first locked door collision
 		if (keyObtained == false && doorEnter1.GetComponent<LockedDoor>().enter == true && doorEnter1.GetComponent<LockedDoor>().open == false)
@@ -170,6 +187,12 @@ public class CharacterSpeech : MonoBehaviour
 			print("Entered chair");
 			enteredChair3 = true;
 		}
+		
+		// On Darkness Wall Collision
+		if(!fuseBox.GetComponent<FuseBox>().lightsOn && darknessWall.GetComponent<DarknessWall>().enterRange){
+			enteredWall = true;
+		}
+		
 	}
 }
 

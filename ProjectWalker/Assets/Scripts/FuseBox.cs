@@ -4,21 +4,20 @@ using System.Collections;
 public class FuseBox : MonoBehaviour {
 
 	public bool accessable;
-	bool lightsOn;
+	public bool lightsOn;
 	bool enterRange;
 
 	public AudioClip lightSwitchNoise; //temporary sound name
 	private AudioSource source;
 
 	GameObject darknessWall;
-
+	
 	// Use this for initialization
 	void Start () {
 		accessable = false;
 		lightsOn = false;
 
 		source = GetComponent<AudioSource> ();
-
 		darknessWall = GameObject.Find ("Invisible Darkness Wall");
 	}
 	

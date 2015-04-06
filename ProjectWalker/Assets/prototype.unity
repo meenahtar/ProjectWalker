@@ -1441,12 +1441,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 647e8d7ce4efffb42bf61d21a4c46178, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168541806}
-  m_LocalRotation: {x: 8.65947855e-17, y: .710193932, z: -3.78892975e-19, w: .704006195}
-  m_LocalPosition: {x: -3.17111707, y: -.432238221, z: .314156115}
-  m_LocalScale: {x: 15.4488363, y: 15.4487925, z: 15.9810028}
+  m_LocalRotation: {x: 6.12323426e-17, y: 1, z: -6.12323492e-17, w: 0}
+  m_LocalPosition: {x: .00487858709, y: .0338241234, z: .0179244056}
+  m_LocalScale: {x: .231189162, y: .231189117, z: .239153028}
   m_Children: []
-  m_Father: {fileID: 976188503}
-  m_RootOrder: 2
+  m_Father: {fileID: 1075265834}
+  m_RootOrder: 1
 --- !u!23 &168541808
 Renderer:
   m_ObjectHideFlags: 0
@@ -5084,6 +5084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
+  open: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!82 &616691452
@@ -5975,7 +5976,7 @@ GameObject:
   - 23: {fileID: 731420223}
   - 65: {fileID: 731420222}
   m_Layer: 0
-  m_Name: door
+  m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5987,12 +5988,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 647e8d7ce4efffb42bf61d21a4c46178, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 731420220}
-  m_LocalRotation: {x: 0, y: -.704006195, z: 0, w: .710193932}
-  m_LocalPosition: {x: -1.97624636, y: -.286839902, z: -.022316156}
-  m_LocalScale: {x: 49.7193947, y: 795.508118, z: 397.755096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .035999991, z: -0}
+  m_LocalScale: {x: .744042158, y: 11.9046736, z: 5.95233822}
   m_Children: []
-  m_Father: {fileID: 976188503}
-  m_RootOrder: 1
+  m_Father: {fileID: 1075265834}
+  m_RootOrder: 0
 --- !u!65 &731420222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8560,7 +8561,7 @@ GameObject:
   - 82: {fileID: 976188500}
   - 114: {fileID: 976188501}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Room3EnterDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8637,6 +8638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
+  open: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!65 &976188502
@@ -8662,10 +8664,6 @@ Transform:
   m_LocalScale: {x: .000867938739, y: .000724247715, z: .000850921497}
   m_Children:
   - {fileID: 1075265834}
-  - {fileID: 731420221}
-  - {fileID: 168541807}
-  - {fileID: 1855752247}
-  - {fileID: 1888733950}
   m_Father: {fileID: 961884563}
   m_RootOrder: 1
 --- !u!1001 &981863586
@@ -10046,7 +10044,11 @@ Transform:
   m_LocalRotation: {x: 0, y: -.704006195, z: 0, w: .710193932}
   m_LocalPosition: {x: -1.97624636, y: -2.69247365, z: -.022316156}
   m_LocalScale: {x: 66.8233566, y: 66.8231735, z: 66.8233414}
-  m_Children: []
+  m_Children:
+  - {fileID: 731420221}
+  - {fileID: 168541807}
+  - {fileID: 1855752247}
+  - {fileID: 1888733950}
   m_Father: {fileID: 976188503}
   m_RootOrder: 0
 --- !u!95 &1075265835
@@ -10325,6 +10327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accessable: 0
+  lightsOn: 0
   lightSwitchNoise: {fileID: 0}
 --- !u!1001 &1105556219
 Prefab:
@@ -14162,6 +14165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36dadf96c90a245448a6229c4aaa5a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterRange: 0
 --- !u!65 &1471424902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14433,6 +14437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 2
   DoorOpenAngle: 90
+  open: 0
   lockedSound: {fileID: 8300000, guid: 4be52bc05ddc26d40a2ef8ae9e92183e, type: 3}
   openSound: {fileID: 8300000, guid: 1d12cb0f878a7de4aaa47188e80547c6, type: 3}
 --- !u!65 &1514421921
@@ -17151,12 +17156,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400008, guid: 647e8d7ce4efffb42bf61d21a4c46178, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1855752246}
-  m_LocalRotation: {x: 0, y: -.704006195, z: 0, w: .710193932}
-  m_LocalPosition: {x: -3.17996287, y: -.443341166, z: .0134391477}
-  m_LocalScale: {x: 53.0439949, y: 8.16058922, z: 8.16061115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .000377424178, y: .0336579718, z: .0180173982}
+  m_LocalScale: {x: .793794215, y: .122122139, z: .122122169}
   m_Children: []
-  m_Father: {fileID: 976188503}
-  m_RootOrder: 3
+  m_Father: {fileID: 1075265834}
+  m_RootOrder: 2
 --- !u!23 &1855752248
 Renderer:
   m_ObjectHideFlags: 0
@@ -17398,12 +17403,12 @@ Transform:
   m_PrefabParentObject: {fileID: 400010, guid: 647e8d7ce4efffb42bf61d21a4c46178, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1888733949}
-  m_LocalRotation: {x: 0, y: -.704006195, z: 0, w: .710193932}
-  m_LocalPosition: {x: -3.17647552, y: -.432237595, z: -.29811728}
-  m_LocalScale: {x: 15.4488373, y: 15.4487925, z: 15.9810066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.00428432738, y: .0338241346, z: .0179244149}
+  m_LocalScale: {x: .231189176, y: .231189117, z: .239153072}
   m_Children: []
-  m_Father: {fileID: 976188503}
-  m_RootOrder: 4
+  m_Father: {fileID: 1075265834}
+  m_RootOrder: 3
 --- !u!23 &1888733951
 Renderer:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections;
 public class DarknessWall : MonoBehaviour {
 
 	GameObject FuseBox;
-	bool enterRange;
+	public bool enterRange;
 	GameObject Room3EnterDoor;
 
 	// Use this for initialization
