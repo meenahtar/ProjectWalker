@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FuseBox.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\KeyPadInitialize.cs">
     <Files>
-      <File FileName="Assets\Scripts\FuseBox.cs" Line="34" Column="2" />
-      <File FileName="Assets\Scripts\OpenableDesk.cs" Line="37" Column="2" />
-      <File FileName="Assets\Scripts\ReadNote2.cs" Line="29" Column="12" />
-      <File FileName="Assets\Scripts\DarknessWall.cs" Line="9" Column="32" />
-      <File FileName="Assets\Scripts\CharacterSpeech.cs" Line="100" Column="168" />
+      <File FileName="Assets\Scripts\KeyPadControl.cs" Line="89" Column="36" />
+      <File FileName="Assets\Scripts\KeyPadInitialize.cs" Line="17" Column="17" />
+      <File FileName="Assets\Scripts\BombScript.cs" Line="32" Column="4" />
+      <File FileName="Assets\Scripts\ReadNote.cs" Line="86" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
