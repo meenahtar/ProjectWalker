@@ -22,12 +22,11 @@ public class ReadNote2 : MonoBehaviour {
 	void Start () 
 	{
 		 //.GetComponent<Image> ();
-		//note = GameObject.Find ("Image");
+		note = GameObject.Find ("Image");
 		//note = GameObject.Find("Note1").GetComponent<ReadNote> ().note;
 		FPC = GameObject.Find ("First Person Controller");
 		MC = GameObject.Find ("Main Camera");
 		drawer = GameObject.Find("deskDrawer");
-		note = this.gameObject;
 		
 		open = false;
 		enter = false;
@@ -40,7 +39,7 @@ public class ReadNote2 : MonoBehaviour {
 		//cannot use extra script
 		//may have to extend parent class and have differences in local class
 		
-		note.SetActive (true);
+		note.GetComponent<Image>().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -54,7 +53,7 @@ public class ReadNote2 : MonoBehaviour {
 			if (open) 
 			{
 
-				note.SetActive(false);
+				note.GetComponent<Image>().enabled = false;
 				open = false;
 				FPC.GetComponent<MouseLook>().enabled = true;
 				FPC.GetComponent<CharacterMotor>().enabled = true;
@@ -62,12 +61,12 @@ public class ReadNote2 : MonoBehaviour {
 			}
 			else
 			{
-				note = GameObject.Find("Note1").GetComponent<ReadNote> ().note;
+				note = GameObject.Find("Image");
 				noteName = gameObject.name;
 				noteSprite = Resources.Load<Sprite>(noteName);
 				note.GetComponent<Image>().sprite = noteSprite;
 
-				note.SetActive(true);
+				note.GetComponent<Image>().enabled = true;
 				open = true;
 				FPC.GetComponent<MouseLook>().enabled = false;
 				FPC.GetComponent<CharacterMotor>().enabled = false;

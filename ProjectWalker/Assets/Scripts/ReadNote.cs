@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ReadNote : MonoBehaviour {
 
-	public GameObject note;
+	GameObject note;
 	//first person controller
 	GameObject FPC;
 	//main camera
@@ -15,13 +15,14 @@ public class ReadNote : MonoBehaviour {
 	public bool firstRead;
 	public bool displayText;
 
-	Sprite noteSprite;
+	public Sprite noteSprite;
 	string noteName;
 
 	// Use this for initialization
 	void Start () 
 	{
 		note = GameObject.Find ("Image"); //.GetComponent<Image> ();
+		
 		FPC = GameObject.Find ("First Person Controller");
 		MC = GameObject.Find ("Main Camera");
 
@@ -37,22 +38,22 @@ public class ReadNote : MonoBehaviour {
 		//note.GetComponent<Image>().sprite = noteSprite;
 		//cannot use extra script
 		//may have to extend parent class and have differences in local class
-
-		note.SetActive (false);
+		note.GetComponent<Image>().enabled = false;
 	}
+
 	
 	// Update is called once per frame
 	void Update () 
 	{
 			//note.GetComponent<Image> ().SetActive(true);
-
+		
 		if(Input.GetKeyDown("g") && enter)
 		{
 			//If its the users first time reading note display story dialogue
 
 			if (open) 
 			{
-				note.SetActive(false);
+				note.GetComponent<Image>().enabled = false;
 				open = false;
 				FPC.GetComponent<MouseLook>().enabled = true;
 				FPC.GetComponent<CharacterMotor>().enabled = true;
@@ -68,9 +69,8 @@ public class ReadNote : MonoBehaviour {
 			else
 			{
 				noteName = gameObject.name;
-				noteSprite = Resources.Load<Sprite>(noteName);
 				note.GetComponent<Image>().sprite = noteSprite;
-				note.SetActive(true);
+				note.GetComponent<Image>().enabled = true;
 				open = true;
 				FPC.GetComponent<MouseLook>().enabled = false;
 				FPC.GetComponent<CharacterMotor>().enabled = false;
