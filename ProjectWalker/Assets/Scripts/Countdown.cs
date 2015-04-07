@@ -14,6 +14,21 @@ public class Countdown : MonoBehaviour {
 	GUIStyle fontDetails;
 	public Texture clock;
 
+	public GameObject minutesObj;
+	public GameObject tenSecObj;
+	public GameObject SecObj;
+
+	public Texture2D[] numTextures;
+	public Texture2D num1;
+	public Texture2D num2;
+	public Texture2D num3;
+	public Texture2D num4;
+	public Texture2D num5;
+	public Texture2D num6;
+	public Texture2D num7;
+	public Texture2D num8;
+	public Texture2D num9;
+
 	void Start ()
 	{
 		doorGone = GameObject.Find ("First Person Controller");
@@ -49,6 +64,18 @@ public class Countdown : MonoBehaviour {
 				//time = timer.ToString();
 				startTime = Time.time;
 
+			}
+		}
+
+		for (float i = 0; i < 10; i++) {
+			if (i == minutes) {
+				minutesObj.renderer.material.mainTexture = numTextures[(int)i];
+			}
+			if (i == tenSeconds) {
+				tenSecObj.renderer.material.mainTexture = numTextures[(int)i];
+			}
+			if (i == seconds) {
+				SecObj.renderer.material.mainTexture = numTextures[(int)i];
 			}
 		}
 	}
