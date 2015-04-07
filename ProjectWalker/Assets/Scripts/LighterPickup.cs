@@ -20,7 +20,7 @@ public class LighterPickup : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown("g") && enter)
+		if(Input.GetKeyDown("g") && enter && transform.parent.GetComponent<OpenableDesk>().opened == true)
 		{
 			//FPC.GetComponent<CharacterSpeech>().screwDriverObtained = true;
 			lighterObtained = true;
@@ -30,7 +30,7 @@ public class LighterPickup : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if(enter)
+		if(enter && transform.parent.GetComponent<OpenableDesk>().opened == true)
 		{
 			GUI.Label(new Rect(Screen.width/2 - 175, Screen.height - 150, 350, 30), "Press 'G' to grab lighter");
 		}
