@@ -20,13 +20,6 @@ public class DarknessWall : MonoBehaviour {
 			FuseBox.GetComponent<FuseBox>().accessable = true;
 		}
 	}
-
-	void OnGUI(){
-		if(enterRange && Room3EnterDoor.GetComponent<UnlockedDoor>().open == true){
-			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "find fusebox");
-			//set variable for characterspeech instead of this prompt?
-		}
-	}
 	
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
