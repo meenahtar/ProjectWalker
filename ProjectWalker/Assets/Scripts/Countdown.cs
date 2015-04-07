@@ -19,6 +19,7 @@ public class Countdown : MonoBehaviour {
 	public GameObject SecObj;
 
 	public Texture2D[] numTextures;
+	public Texture2D num0;
 	public Texture2D num1;
 	public Texture2D num2;
 	public Texture2D num3;
@@ -28,6 +29,8 @@ public class Countdown : MonoBehaviour {
 	public Texture2D num7;
 	public Texture2D num8;
 	public Texture2D num9;
+
+	public bool won;
 
 	void Start ()
 	{
@@ -39,13 +42,27 @@ public class Countdown : MonoBehaviour {
 		fontDetails = new GUIStyle ();
 		fontDetails.normal.textColor = Color.black;
 		fontDetails.fontSize = 20;
+
+		numTextures = new Texture2D[10];
+		numTextures [0] = num0;
+		numTextures [1] = num1;
+		numTextures [2] = num2;
+		numTextures [3] = num3;
+		numTextures [4] = num4;
+		numTextures [5] = num5;
+		numTextures [6] = num6;
+		numTextures [7] = num7;
+		numTextures [8] = num8;
+		numTextures [9] = num9;
+
+		won = false;
 	}
 
 	void Update () 
 	{
 		countdownStart = doorGone.GetComponent<CheckDoor> ().doorGone;
 		//print (countdownStart);
-		if (countdownStart) 
+		if (countdownStart && !won) 
 		{
 			if(Time.time >= startTime + 1)
 			{
@@ -65,17 +82,22 @@ public class Countdown : MonoBehaviour {
 				startTime = Time.time;
 
 			}
-		}
 
-		for (float i = 0; i < 10; i++) {
-			if (i == minutes) {
-				minutesObj.renderer.material.mainTexture = numTextures[(int)i];
+			if (minutes == 0 && tenSeconds == 0 && seconds == 0)
+			{
+				Application.LoadLevel("prototype");
 			}
-			if (i == tenSeconds) {
-				tenSecObj.renderer.material.mainTexture = numTextures[(int)i];
-			}
-			if (i == seconds) {
-				SecObj.renderer.material.mainTexture = numTextures[(int)i];
+
+			for (float i = 0; i < 10; i++) {
+				if (i == minutes) {
+					minutesObj.renderer.material.mainTexture = numTextures[(int)i];
+				}
+				if (i == tenSeconds) {
+					tenSecObj.renderer.material.mainTexture = numTextures[(int)i];
+				}
+				if (i == seconds) {
+					SecObj.renderer.material.mainTexture = numTextures[(int)i];
+				}
 			}
 		}
 	}
@@ -84,11 +106,10 @@ public class Countdown : MonoBehaviour {
 	{
 		if(countdownStart)
 		{
-			GUI.DrawTexture(new Rect(Screen.width - 350, 50, 350, 30), clock, ScaleMode.ScaleToFit, true, 10.0F);
-			GUI.Label(new Rect(Screen.width - 350, 50, 350, 60), minutes + " : " + tenSeconds + seconds, fontDetails);
+			GUI.DrawTexture(new Rect(Screen.width - 405, 5, 150, 100), clock, ScaleMode.ScaleToFit, true, 0.0f);
+			GUI.Label(new Rect(Screen.width - 350, 50, 350, 60), " " + minutes + "  " + tenSeconds + seconds, fontDetails);
 		}
-		GUI.DrawTexture(new Rect(Screen.width - 405, 5, 150, 100), clock, ScaleMode.ScaleToFit, true, 0.0f);
-		GUI.Label(new Rect(Screen.width - 350, 50, 350, 60), " " + minutes + "  " + tenSeconds + seconds, fontDetails);
+
 	}
 
 

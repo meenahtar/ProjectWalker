@@ -17,9 +17,14 @@ public class FuseBox : MonoBehaviour {
 	GameObject darknessWall;
 	GameObject lights;
 	Light[] allChildren;
+
+
 	
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+
+
 		accessable = false;
 		lightsOn = false;
 		firstLight = true;
@@ -78,7 +83,8 @@ public class FuseBox : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if(enterRange && accessable && lightsOn == false){
+		if(enterRange && accessable && lightsOn == false)
+		{
 			GUI.Label(new Rect(Screen.width/2 - 75, Screen.height - 100, 150, 30), "Press 'F' to turn on lights");
 		}
 	}

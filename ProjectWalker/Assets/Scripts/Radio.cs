@@ -16,11 +16,11 @@ public class Radio : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("f") && enterRange && on) {
+		if (Input.GetKeyDown ("g") && enterRange && on) {
 			on = false;
 			music.Pause();
 			speech.Pause();
-		} else if (Input.GetKeyDown ("f") && enterRange && !on) {
+		} else if (Input.GetKeyDown ("g") && enterRange && !on) {
 			on = true;
 			music.Play();
 			speech.Play();
@@ -30,9 +30,9 @@ public class Radio : MonoBehaviour {
 	void OnGUI()
 	{
 		if (enterRange && on) {
-			GUI.Label (new Rect (Screen.width / 2 - 175, Screen.height - 100, 350, 30), "Press 'F' to turn off radio");
+			GUI.Label (new Rect (Screen.width / 2 - 175, Screen.height - 100, 350, 30), "Press 'G' to turn off radio");
 		} else if (enterRange && !on) {
-			GUI.Label (new Rect (Screen.width / 2 - 175, Screen.height - 100, 350, 30), "Press 'F' to turn on radio");
+			GUI.Label (new Rect (Screen.width / 2 - 175, Screen.height - 100, 350, 30), "Press 'G' to turn on radio");
 		}
 	}
 

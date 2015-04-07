@@ -10,6 +10,8 @@ public class CheckDoor : MonoBehaviour {
 	public bool doorGone;
 	public bool bombPlaced;
 
+	GameObject alarm;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -18,6 +20,8 @@ public class CheckDoor : MonoBehaviour {
 		bomb = GameObject.Find ("Cherry Bomb");
 		lighter = GameObject.Find ("Lighter");
 		doorGone = false;
+
+		alarm = GameObject.Find ("Alarm");
 	}
 	
 	// Update is called once per frame
@@ -44,6 +48,8 @@ public class CheckDoor : MonoBehaviour {
 					bomb.SetActive(false);
 					door.SetActive(false);
 					doorGone = true;
+
+					alarm.GetComponent<Alarm>().startAlarm();
 					
 				}
 			}

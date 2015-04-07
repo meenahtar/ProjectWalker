@@ -7,8 +7,14 @@ public class DarknessWall : MonoBehaviour {
 	public bool enterRange;
 	GameObject Room3EnterDoor;
 
+	GUIStyle fontDetails;
+
 	// Use this for initialization
 	void Start () {
+		fontDetails = new GUIStyle ();
+		fontDetails.normal.textColor = Color.white;
+		fontDetails.fontSize = 20;
+
 		FuseBox = GameObject.Find ("FuseBox");
 		Room3EnterDoor = GameObject.Find ("Room3EnterDoor");
 	}
@@ -20,7 +26,13 @@ public class DarknessWall : MonoBehaviour {
 			FuseBox.GetComponent<FuseBox>().accessable = true;
 		}
 	}
-	
+	void OnGUI()
+	{
+		if (enterRange){
+			GUI.Label (new Rect (Screen.width / 2 - 250, Screen.height - 200, 500, 40), "It's way too dark in there. Maybe if I fix this fusebox first…", fontDetails);
+		}
+	}
+
 	//Activate the Main function when player is near the door
 	void OnTriggerEnter (Collider other){
 		if (other.gameObject.tag == "Player") {

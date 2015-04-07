@@ -191,6 +191,7 @@ public class CharacterSpeech : MonoBehaviour
 		// On Darkness Wall Collision
 		if(!fuseBox.GetComponent<FuseBox>().lightsOn && darknessWall.GetComponent<DarknessWall>().enterRange){
 			enteredWall = true;
+			print ("darkness comparison");
 		}
 		
 	}

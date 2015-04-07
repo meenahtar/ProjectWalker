@@ -29,6 +29,8 @@ public class KeyPadControl : MonoBehaviour {
 	float successTimeStart;
 	float successTimer;
 	bool successStatus;
+
+	GameObject clock;
 	
 	// Use this for initialization
 	void Start () {
@@ -47,6 +49,8 @@ public class KeyPadControl : MonoBehaviour {
 		errorStatus = false;
 		successTimer = 5.0f;
 		successStatus = false;
+
+		clock = GameObject.Find ("Clock");
 	}
 	
 	// Update is called once per frame
@@ -86,6 +90,7 @@ public class KeyPadControl : MonoBehaviour {
 					//other victory reactions (final cutscene?)
 					// ---
 					if (!successStatus) {
+						clock.GetComponent<Countdown>().won = true;
 						successStatus = true;
 						successTimeStart = Time.time;
 					}

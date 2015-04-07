@@ -54,7 +54,8 @@ public class KeyPadInitialize : MonoBehaviour {
 		if (enterRange && !accessing) {
 			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'F' to use keypad");
 		} else if (enterRange && accessing) {
-			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Press 'F' to stop using keypad");
+			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height - 135, 400, 50), "Type with numbers above the letters on your keyboard");
+			GUI.Label (new Rect (Screen.width / 2 - 75, Screen.height - 100, 200, 50), "Press 'F' to stop using keypad");
 		}
 	}
 
