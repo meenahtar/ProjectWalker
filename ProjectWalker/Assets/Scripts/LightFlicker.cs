@@ -7,7 +7,7 @@ public class LightFlicker : MonoBehaviour {
 	float baseS = 0.0f;
 	float amplitude = 1.0f;
 	float phase = 0.0f;
-	float frequency = 0.5f;
+	public float frequency = 0.5f;
 
 	private Color originalColor;
 

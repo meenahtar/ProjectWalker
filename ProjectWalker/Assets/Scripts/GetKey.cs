@@ -19,6 +19,7 @@ public class GetKey : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+
 		if (enterRange && Input.GetKeyDown ("g")) 
 		{
 			FPC.GetComponent<CharacterSpeech>().keyObtained = true;

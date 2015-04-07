@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: ae12afbf3cd653444bbb2a984763487f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Wehrmacht_soldier:objlForeArm
+    100004: Wehrmacht_soldier:objlHand
+    100006: Wehrmacht_soldier:objlIndex1
+    100008: Wehrmacht_soldier:objlIndex2
+    100010: Wehrmacht_soldier:objlIndex3
+    100012: Wehrmacht_soldier:objlMid1
+    100014: Wehrmacht_soldier:objlMid2
+    100016: Wehrmacht_soldier:objlMid3
+    100018: Wehrmacht_soldier:objlShldr
+    100020: Wehrmacht_soldier:objlShldr1
+    100022: Wehrmacht_soldier:objlThumb1
+    100024: Wehrmacht_soldier:objlThumb2
+    100026: Wehrmacht_soldier:objlThumb3
+    100028: Wehrmacht_soldier:transform40
+    100030: Wehrmacht_soldier:transform41
+    100032: Wehrmacht_soldier:transform42
+    100034: Wehrmacht_soldier:transform43
+    100036: Wehrmacht_soldier:transform44
+    100038: Wehrmacht_soldier:transform45
+    100040: Wehrmacht_soldier:transform46
+    100042: Wehrmacht_soldier:transform47
+    100044: Wehrmacht_soldier:transform48
+    100046: Wehrmacht_soldier:transform49
+    100048: Wehrmacht_soldier:transform50
+    100050: Wehrmacht_soldier:transform51
+    400000: //RootNode
+    400002: Wehrmacht_soldier:objlForeArm
+    400004: Wehrmacht_soldier:objlHand
+    400006: Wehrmacht_soldier:objlIndex1
+    400008: Wehrmacht_soldier:objlIndex2
+    400010: Wehrmacht_soldier:objlIndex3
+    400012: Wehrmacht_soldier:objlMid1
+    400014: Wehrmacht_soldier:objlMid2
+    400016: Wehrmacht_soldier:objlMid3
+    400018: Wehrmacht_soldier:objlShldr
+    400020: Wehrmacht_soldier:objlShldr1
+    400022: Wehrmacht_soldier:objlThumb1
+    400024: Wehrmacht_soldier:objlThumb2
+    400026: Wehrmacht_soldier:objlThumb3
+    400028: Wehrmacht_soldier:transform40
+    400030: Wehrmacht_soldier:transform41
+    400032: Wehrmacht_soldier:transform42
+    400034: Wehrmacht_soldier:transform43
+    400036: Wehrmacht_soldier:transform44
+    400038: Wehrmacht_soldier:transform45
+    400040: Wehrmacht_soldier:transform46
+    400042: Wehrmacht_soldier:transform47
+    400044: Wehrmacht_soldier:transform48
+    400046: Wehrmacht_soldier:transform49
+    400048: Wehrmacht_soldier:transform50
+    400050: Wehrmacht_soldier:transform51
+    2300000: Wehrmacht_soldier:objlShldr1
+    3300000: Wehrmacht_soldier:objlShldr1
+    4300000: Wehrmacht_soldier:objlShldr1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

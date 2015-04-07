@@ -8,12 +8,15 @@ public class Screwdriver : MonoBehaviour {
 	bool enter;
 	
 	GameObject FPC;
-	
+	GameObject ventKey;
 	// Use this for initialization
 	void Start () 
 	{
 		screwDriver = GameObject.Find ("Screw Driver");
 		FPC = GameObject.Find ("First Person Controller");
+		ventKey = GameObject.Find ("Vent Key");
+		
+		ventKey.SetActive (false);
 		screwDriver.SetActive (true);
 	}
 	
@@ -24,6 +27,7 @@ public class Screwdriver : MonoBehaviour {
 		{
 			FPC.GetComponent<CharacterSpeech>().screwDriverObtained = true;
 			screwDriver.SetActive(false);
+			ventKey.SetActive(true);
 		}
 	}
 	

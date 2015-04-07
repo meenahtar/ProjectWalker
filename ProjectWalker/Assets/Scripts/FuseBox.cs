@@ -31,7 +31,6 @@ public class FuseBox : MonoBehaviour {
 		allChildren = lights.GetComponentsInChildren<Light>();
 		for( int i = 0; i < allChildren.Length; i++){
 			Light light = allChildren[i];
-			print (i);
 			light.enabled = false;
 		}
 	}
